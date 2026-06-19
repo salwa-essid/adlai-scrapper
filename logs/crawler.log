@@ -1,0 +1,89 @@
+{"level":"info","message":"Starting zatca","timestamp":"2026-06-18T11:45:10.264Z"}
+{"level":"info","message":"Starting zatca","timestamp":"2026-06-18T11:46:09.512Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T11:51:54.755Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T11:51:54.757Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T11:51:57.310Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T11:51:57.313Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T11:51:57.314Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T11:52:00.094Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T11:56:31.599Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T11:56:31.601Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T11:56:34.907Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T11:56:34.909Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T11:56:34.910Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T11:56:35.486Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T11:58:45.946Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T11:58:45.948Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T11:58:48.116Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T11:58:48.118Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T11:58:48.119Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T11:58:49.729Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T11:59:06.555Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T11:59:06.557Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T11:59:07.313Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T11:59:07.315Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T11:59:07.316Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T11:59:07.765Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T12:47:02.855Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T12:47:02.858Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T12:47:03.517Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T12:47:03.519Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T12:47:03.520Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T12:47:03.889Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T12:49:30.866Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T12:49:30.868Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T12:49:31.378Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T12:49:31.380Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T12:49:31.381Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T12:50:23.555Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T12:50:23.558Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T12:50:24.076Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T12:50:24.078Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T12:50:24.079Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T12:51:40.354Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T12:51:40.356Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T12:51:40.968Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T12:51:40.970Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T12:51:40.971Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:01:11.078Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:01:11.080Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:01:15.434Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:01:15.436Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:01:15.438Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:01:51.035Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:01:51.037Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:01:51.796Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:01:51.797Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:01:51.799Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:03:38.050Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:03:38.052Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:03:38.840Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:03:38.842Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:03:38.843Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:07:59.721Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:07:59.723Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:08:00.242Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:08:00.243Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:08:00.245Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:08:19.605Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:08:19.607Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:08:20.154Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:08:20.156Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:08:20.157Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:08:42.253Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:08:42.255Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:08:42.806Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:08:42.808Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:08:42.810Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:16:07.916Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:16:07.919Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T13:16:09.955Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:16:09.957Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:16:09.958Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:16:10.325Z"}
+{"level":"info","message":"Starting source: zatca","timestamp":"2026-06-18T13:22:19.056Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/E-Invoicing/Pages/default.aspx | depth: 0","timestamp":"2026-06-18T13:22:19.058Z"}
+{"level":"info","message":"Crawling: https://raqmi.dga.gov.sa/platforms/platforms/f409ac24-8d98-4725-8736-0af491931212/platform-license | depth: 1","timestamp":"2026-06-18T13:22:19.736Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ContactUs/ | depth: 1","timestamp":"2026-06-18T13:22:19.738Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/AboutUs/ZATCAApps | depth: 1","timestamp":"2026-06-18T13:22:19.739Z"}
+{"level":"info","message":"Crawling: https://zatca.gov.sa/en/ | depth: 1","timestamp":"2026-06-18T13:22:20.142Z"}
