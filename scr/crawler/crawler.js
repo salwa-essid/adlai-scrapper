@@ -1,11 +1,10 @@
-
 const axios = require("axios");
 const xml2js = require("xml2js");
 
 const { downloadPdf, fetchPage } = require("../parsers/fetcher");
 const { parsePdf } = require("../parsers/pdfParser");
 const { extractArticles } = require("../parsers/articleParser");
-const { setStatus } = require("../api/status");
+const { saveData } = require("../storage/fileWriter");
 
 async function getSitemapLinks(sitemapUrl) {
     const res = await axios.get(sitemapUrl, {
@@ -15,40 +14,37 @@ async function getSitemapLinks(sitemapUrl) {
 
     const parsed = await xml2js.parseStringPromise(res.data);
 
-    // 🔍 نشوف شو راجع فعلاً
-    console.log("📦 Sitemap keys:", Object.keys(parsed));
-
-    // بعض sitemaps تكون sitemapindex مش urlset
     if (parsed.sitemapindex) {
         const subSitemaps = parsed.sitemapindex.sitemap.map(s => s.loc[0]);
-        console.log("📂 Sub-sitemaps found:", subSitemaps.length);
 
-        // نجيب URLs من كل sub-sitemap
         const allUrls = [];
-        for (const sub of subSitemaps.slice(0, 5)) { // أول 5 بس ما نغرق
+
+        for (const sub of subSitemaps.slice(0, 5)) {
             try {
                 const subRes = await axios.get(sub, { timeout: 15000 });
                 const subParsed = await xml2js.parseStringPromise(subRes.data);
+
                 if (subParsed.urlset?.url) {
-                    allUrls.push(...subParsed.urlset.url.map(u => u.loc[0]));
+                    allUrls.push(
+                        ...subParsed.urlset.url.map(u => u.loc[0])
+                    );
                 }
             } catch (e) {
-                console.warn("⚠️ Sub-sitemap failed:", sub);
+                console.warn(`⚠️ Sub-sitemap failed: ${sub}`);
             }
         }
+
         return allUrls;
     }
 
-    // normal sitemap
     if (parsed.urlset?.url) {
         return parsed.urlset.url.map(u => u.loc[0]);
     }
 
-    console.warn("⚠️ Unknown sitemap format");
     return [];
 }
 
-async function runCrawler(sources = []) {
+async function runCrawler(sources = [], onProgress = () => {}) {
     const results = [];
 
     for (const source of sources) {
@@ -59,34 +55,61 @@ async function runCrawler(sources = []) {
 
             if (source.method === "pdf") {
                 console.log("📄 Downloading PDF...");
+
                 const buffer = await downloadPdf(source.url);
                 const text = await parsePdf(buffer);
 
+                console.log("SOURCE:", source.name);
+                console.log("TEXT SIZE:", text?.length || 0);
+
                 extracted = extractArticles(text, source.url);
-
-            } else if (source.method === "browser") {
-                console.log("🌐 Launching browser...");
-                const { chromium } = require('playwright');
-
-                const browser = await chromium.launch({ headless: true });
-                const page = await browser.newPage();
-
-                await page.goto(source.url, {
-                    waitUntil: 'networkidle',
-                    timeout: 30000
-                });
-
-                const html = await page.content(); // 🔥 FIX مهم
-
-                await browser.close();
-
-                extracted = extractArticles(html, source.url);
 
             } else if (source.method === "html") {
                 console.log("🌐 Fetching HTML page...");
+
                 const html = await fetchPage(source.url);
 
+                console.log("SOURCE:", source.name);
+                console.log("HTML SIZE:", html?.length || 0);
+
                 extracted = extractArticles(html, source.url);
+
+            } else if (source.method === "browser") {
+
+                console.log("🌐 Launching browser...");
+
+                const { chromium } = require("playwright");
+
+                const browser = await chromium.launch({
+                    headless: true
+                });
+
+                const page = await browser.newPage();
+
+                await page.goto(source.url, {
+                    waitUntil: "networkidle",
+                    timeout: 60000
+                });
+
+                await page.waitForTimeout(5000);
+
+                const text = await page.evaluate(
+                    () => document.body.innerText
+                );
+                console.log('salouta',
+                    text.match(/المادة\s+\S+/g)?.slice(0, 20)
+                );
+                console.log("========== COMPANIES DEBUG ==========");
+                console.log("TEXT SIZE:", text.length);
+                console.log(text.substring(0, 1000));
+                console.log("====================================");
+
+                await browser.close();
+
+                console.log("SOURCE:", source.name);
+                console.log("TEXT SIZE:", text?.length || 0);
+
+                extracted = extractArticles(text, source.url);
 
             } else if (source.method === "sitemap") {
                 const urls = await getSitemapLinks(source.url);
@@ -94,24 +117,56 @@ async function runCrawler(sources = []) {
                 for (const url of urls) {
                     try {
                         const html = await fetchPage(url);
-                        extracted.push(...extractArticles(html, url));
+
+                        extracted.push(
+                            ...extractArticles(html, url)
+                        );
+
                     } catch (e) {
-                        console.warn("⚠️ Failed:", url);
+                        console.warn(`⚠️ Failed: ${url}`);
                     }
                 }
+            } else {
+                throw new Error(`Unknown method: ${source.method}`);
             }
 
             console.log(`✅ Articles found: ${extracted.length}`);
 
+            if (extracted.length > 0) {
+                saveData(source.name, extracted);
+
+                onProgress(
+                    source.name,
+                    "success",
+                    extracted.length,
+                    null
+                );
+            } else {
+                onProgress(
+                    source.name,
+                    "failed",
+                    0,
+                    "No articles found"
+                );
+            }
+
             results.push(...extracted);
 
         } catch (err) {
-            console.error(`❌ Source failed: ${source.name} — ${err.message}`);
+            console.error(
+                `❌ Source failed: ${source.name} — ${err.message}`
+            );
+
+            onProgress(
+                source.name,
+                "failed",
+                0,
+                err.message
+            );
         }
     }
 
     return results;
 }
-
 
 module.exports = { runCrawler };

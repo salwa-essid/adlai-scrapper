@@ -1,24 +1,23 @@
 const fs = require("fs");
 const path = require("path");
 
-function saveOutput(lawType, fullText, articles) {
-    const outputDir = path.join(process.cwd(), "output", lawType);
+function saveData(name, articles) {
+    const dir = path.join(__dirname, "../../output", name);
 
-    fs.mkdirSync(outputDir, { recursive: true });
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
 
-    fs.writeFileSync(
-        path.join(outputDir, `${lawType}_full.txt`),
-        fullText || "",
-        "utf8"
-    );
+    const jsonPath = path.join(dir, `${name}_articles.json`);
+    fs.writeFileSync(jsonPath, JSON.stringify(articles, null, 2), "utf-8");
 
-    fs.writeFileSync(
-        path.join(outputDir, `${lawType}_articles.json`),
-        JSON.stringify(articles, null, 2),
-        "utf8"
-    );
+    const txtPath = path.join(dir, `${name}_full.txt`);
+    const fullText = articles.map(a =>
+        `=== المادة ${a.article_number} ===\n${a.text}`
+    ).join("\n\n");
+    fs.writeFileSync(txtPath, fullText, "utf-8");
 
-    console.log(`💾 Saved output/${lawType}`);
+    console.log(`💾 Saved ${articles.length} articles to output/${name}/`);
 }
 
-module.exports = { saveOutput };
+module.exports = { saveData };

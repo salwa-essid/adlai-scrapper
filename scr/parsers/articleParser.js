@@ -2,9 +2,7 @@ const cheerio = require("cheerio");
 
 function cleanHtml(html) {
     const $ = cheerio.load(html);
-
-    $("script, style, noscript, iframe, nav, footer, header").remove();
-
+    $("script, style, noscript, iframe, nav, footer, header, aside").remove();
     return $("body")
         .text()
         .replace(/\s+/g, " ")
@@ -12,73 +10,51 @@ function cleanHtml(html) {
         .replace(/ـ+/g, "")
         .trim();
 }
+function detectLanguage(text) {
+    const arabicChars = (text.match(/[\u0600-\u06FF]/g) || []).length;
+    const latinChars = (text.match(/[A-Za-z]/g) || []).length;
 
+    return arabicChars > latinChars ? "ar" : "en";
+}
 function extractArticles(rawText, sourceUrl) {
-
     const text = rawText?.trim()?.startsWith("<")
         ? cleanHtml(rawText)
         : (rawText || "").replace(/\s+/g, " ").trim();
 
     if (!text || text.length < 300) return [];
 
-    // detect articles (Arabic + English)
-    const pattern = /المادة\s*\(?\s*(\d+)\s*\)?/g;
-    const englishPattern = /Article\s+(\d+)/gi;
+    const pattern =
+        /(المادة\s+(?:\d+|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|العاشرة)|Article\s*[\(\[]?\s*\d+\s*[\)\]]?)/gi;
+    const matches = [...text.matchAll(pattern)];
+    console.log('slawaaa',
+        text.match(/المادة\s+\S+/g)?.slice(0, 20)
+    );
 
-    let matches = [];
+    if (matches.length === 0) return [];
 
-    for (const m of text.matchAll(pattern)) {
-        matches.push({ index: m.index, num: parseInt(m[1]) });
-    }
-
-    for (const m of text.matchAll(englishPattern)) {
-        matches.push({ index: m.index, num: parseInt(m[1]) });
-    }
-
-    if (matches.length === 0) {
-        return [{
-            article_number: 1,
-            text: text.slice(0, 3000),
-            source_url: sourceUrl,
-            fetched_at: new Date().toISOString()
-        }];
-    }
-
-    // STEP 1: sort by position in text
-    matches.sort((a, b) => a.index - b.index);
-
-    // STEP 2: simple dedupe (by article number)
-    const seen = new Set();
-    const unique = [];
-
-    for (const m of matches) {
-        if (seen.has(m.num)) continue;
-        seen.add(m.num);
-        unique.push(m);
-    }
-
-    // STEP 3: build articles sequentially
     const articles = [];
 
-    for (let i = 0; i < unique.length; i++) {
+    for (let i = 0; i < matches.length; i++) {
+        const start = matches[i].index;
+        const end = matches[i + 1]?.index || text.length;
 
-        const start = unique[i].index;
-        const end = unique[i + 1]?.index || text.length;
+        let block = text.slice(start, end).trim();
 
-        const articleText = text.slice(start, end).trim();
+        block = block
+            .replace(/\s+/g, " ")
+            .replace(/(\. ){2,}/g, ". ")
+            .trim();
 
-        if (articleText.length < 80) continue;
+        if (block.length < 50) continue;
 
         articles.push({
-            article_number: unique[i].num,
-            text: articleText,
+            article_number: parseInt(matches[i][2]),
+            language: detectLanguage(block),
+            text: block,
             source_url: sourceUrl,
             fetched_at: new Date().toISOString()
         });
     }
-
-    // STEP 4: final ordering (VERY IMPORTANT)
-    articles.sort((a, b) => a.article_number - b.article_number);
 
     return articles;
 }

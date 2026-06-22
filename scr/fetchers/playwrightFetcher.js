@@ -1,37 +1,22 @@
 
+//browser fetcher
 
 const { chromium } = require("playwright");
 
-async function playwrightFetch(url) {
+async function browserFetcher(source) {
+    const browser = await chromium.launch({ headless: true });
+    const page = await browser.newPage();
 
-    let browser;
+    await page.goto(source.url, {
+        waitUntil: "networkidle",
+        timeout: 60000
+    });
 
-    try {
+    const content = await page.content();
 
-        browser = await chromium.launch({
-            headless: true
-        });
+    await browser.close();
 
-        const page = await browser.newPage();
-
-        await page.goto(url, {
-            waitUntil: "domcontentloaded"
-        });
-
-        const html = await page.content();
-
-        await browser.close();
-
-        return html;
-
-    } catch {
-
-        if (browser) {
-            await browser.close();
-        }
-
-        return null;
-    }
+    return content;
 }
 
-module.exports = { playwrightFetch };
+module.exports = { browserFetcher };

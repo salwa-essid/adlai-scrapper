@@ -1,9 +1,13 @@
+//fetcher.js=======fetchpage() and downloadPdf()
+// ,timeout,download pdf pdf parsing source failure
+
 const axios = require("axios");
 const https = require("https");
 
 const agent = new https.Agent({ rejectUnauthorized: false });
 
 async function fetchPage(url, retries = 3) {
+    //retry + backoff
     for (let i = 0; i < retries; i++) {
         try {
             const res = await axios.get(url, {
