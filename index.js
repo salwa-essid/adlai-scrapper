@@ -44,13 +44,45 @@
 //
 // run();
 
-require("dotenv").config();
 const { runCrawler } = require("./scr/crawler/crawler");
-const { startServer } = require("./scr/server/statusServer");
+const { saveOutput } = require("./scr/storage/fileWriter");
+const sources = require("./scr/config/sources.config.js");
 
 async function main() {
-    startServer();      // status API
-    await runCrawler(); // scraping pipeline
+    try {
+        const results = await runCrawler(sources);
+
+        console.log("✅ DONE — Articles found:", results.length);
+
+        // group by source
+        const grouped = {};
+
+        for (const a of results) {
+            const key = a.source_url || "unknown";
+
+            if (!grouped[key]) {
+                grouped[key] = [];
+            }
+
+            grouped[key].push(a);
+        }
+
+        // save per law type (zatca, companies, etc.)
+        for (const source of sources) {
+            const key = source.name;
+
+            const articles = grouped[source.url] || [];
+
+            const fullText = articles.map(a => a.text).join("\n\n");
+
+            saveOutput(key, fullText, articles);
+
+            console.log(`💾 Saved ${key}: ${articles.length}`);
+        }
+
+    } catch (err) {
+        console.error("❌ Error:", err);
+    }
 }
 
 main();

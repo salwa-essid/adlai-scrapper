@@ -1,63 +1,21 @@
-function isBad(link) {
-    return (
-        !link ||
-        link.includes("login") ||
-        link.includes("contact") ||
-        link.includes("privacy") ||
-        link.includes("terms") ||
-        link.includes("#") ||
-        link.startsWith("javascript:") ||
-        link.includes("readspeaker")
-    );
-}
+function isGoodContent(text) {
+    if (!text) return false;
 
-function isAllowed(link) {
-    return (
-        link &&
-        (link.includes("zatca.gov.sa") || link.includes("gov.sa")) &&
-        !isBad(link)
-    );
-}
+    if (text.length < 500) return false;
 
-/**
- * Clean content quality filter
- */
-function isGoodContent(text, url) {
-    if (!text || typeof text !== "string") return false;
-    const cleanText = text.toLowerCase();
-    const badPatterns = [
+    const badSignals = [
         "loading",
-        "search",
-        "voice commands",
-        "font size",
-        "greyscale",
-        "login",
-        "contact us",
-        "not found",
-        "error",
-        "copyright",
-        "all rights reserved",
-        "menu",
-        "navigation"
+        "cookie",
+        "enable javascript",
+        "access denied"
     ];
-    // reject noisy pages
-    if (badPatterns.some(p => cleanText.includes(p))) {
-        return false;
-    }
-    // remove ultra short pages (noise)
-    if (text.trim().length < 800) {
-        return false;
-    }
-    // optional: reject pages that are mostly UI boilerplate
-    const wordCount = text.trim().split(/\s+/).length;
-    if (wordCount < 120) {
-        return false;
-    }
-    return true;
+
+    const lower = text.toLowerCase();
+
+    const bad = badSignals.some(s => lower.includes(s));
+
+    return !bad;
 }
 
-module.exports = {
-    isAllowed,
-    isGoodContent,
-    isBad
-};
+module.exports = { isGoodContent };
+

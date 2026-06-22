@@ -2,12 +2,11 @@
   "name": "cdit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,8 +16,10 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "p-limit": "^7.3.0",
+    "pdf-parse": "^1.1.1",
     "playwright": "^1.61.0",
-    "winston": "^3.19.0"
+    "winston": "^3.19.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
