@@ -123,7 +123,6 @@ See `RESULTS.md` for full details.
 ---
 
 ## Resilience
-
 * One failing source never crashes the others
 * Configurable timeout + retry with exponential backoff
 * Clear per-source error logging
