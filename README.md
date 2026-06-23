@@ -30,8 +30,8 @@ Sources are defined in `scr/config/sources.config.js`:
 ```js
 {
     name: "zatca",
-    url: "https://...",
-    method: "pdf | html | browser | local_pdf"
+        url: "https://...",
+        method: "pdf | html | browser | local_pdf"
 }
 ```
 
@@ -123,6 +123,7 @@ See `RESULTS.md` for full details.
 ---
 
 ## Resilience
+
 * One failing source never crashes the others
 * Configurable timeout + retry with exponential backoff
 * Clear per-source error logging

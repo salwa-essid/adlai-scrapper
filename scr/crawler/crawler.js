@@ -89,12 +89,12 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                     }
                 }
             }
-         else if (source.method === "local_pdf") {
-            const fs = require('fs');
-            const buffer = fs.readFileSync(source.url);
-            const text = await parsePdf(buffer);
-            extracted = extractArticles(text, source.url);
-        }
+            else if (source.method === "local_pdf") {
+                const fs = require('fs');
+                const buffer = fs.readFileSync(source.url);
+                const text = await parsePdf(buffer);
+                extracted = extractArticles(text, source.url);
+            }
             else {
                 throw new Error(`unknown method: ${source.method}`);
             }
