@@ -1,7 +1,6 @@
 function cleanText(html) {
 
     if (!html) return "";
-
     return html
         // remove scripts/styles
         .replace(/<script[^>]*>.*?<\/script>/gs, "")

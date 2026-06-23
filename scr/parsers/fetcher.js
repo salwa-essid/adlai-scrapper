@@ -5,7 +5,6 @@ const axios = require("axios");
 const https = require("https");
 
 const agent = new https.Agent({ rejectUnauthorized: false });
-
 async function fetchPage(url, retries = 3) {
     //retry + backoff
     for (let i = 0; i < retries; i++) {
@@ -17,13 +16,12 @@ async function fetchPage(url, retries = 3) {
             });
             return res.data;
         } catch (err) {
-            console.warn(`⚠️ Attempt ${i + 1} failed for ${url}: ${err.message}`);
+            console.warn(` Attempt ${i + 1} failed for ${url}: ${err.message}`);
             if (i === retries - 1) throw err;
             await new Promise(r => setTimeout(r, 2000 * (i + 1)));
         }
     }
 }
-
 async function downloadPdf(url) {
     const res = await axios.get(url, {
         responseType: "arraybuffer",
