@@ -35,11 +35,6 @@ Sources are defined in `scr/config/sources.config.js`:
 }
 ```
 
-To add or change a source, edit this file only — no code changes needed.
-
----
-
-## Usage
 
 ### Run with server (recommended)
 
@@ -95,7 +90,6 @@ Each article in JSON:
 ```
 adlai-scraper/
 ├── server.js               Express server (/run + /status)
-├── index.js                Direct runner
 ├── scr/
 │   ├── config/             Sources configuration
 │   ├── crawler/            Main orchestrator
