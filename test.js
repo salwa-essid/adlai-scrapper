@@ -1,22 +1,19 @@
-const { chromium } = require('playwright');
+const axios = require('axios');
+const https = require('https');
+const { parsePdf } = require('./scr/parsers/pdfParser');
+
+const agent = new https.Agent({ rejectUnauthorized: false });
 
 async function test() {
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
+    const res = await axios.get(
+        'https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf',
+        { httpsAgent: agent, responseType: 'arraybuffer', headers: { 'User-Agent': 'Mozilla/5.0' } }
+    );
 
-    await page.goto('https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/a8376aea-1bc3-49d4-9027-aed900b555af/1', {
-        waitUntil: 'networkidle',
-        timeout: 60000
-    });
-
-    await page.waitForTimeout(5000);
-
-    const text = await page.evaluate(() => document.body.innerText);
-
-    const lines = text.split('\n').filter(l => l.match(/المادة|Article/));
-    console.log("ARTICLE LINES:", lines.slice(0, 15));
-
-    await browser.close();
+    const text = await parsePdf(Buffer.from(res.data));
+    const lines = text.split('\n').filter(l => l.match(/Article|المادة/i));
+    console.log("LENGTH:", text.length);
+    console.log("LINES:", lines.slice(0, 15));
 }
 
 test().catch(console.error);

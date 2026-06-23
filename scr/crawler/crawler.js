@@ -56,7 +56,8 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                 console.log("SOURCE:", source.name);
                 console.log("HTML SIZE:", html?.length || 0);
                 extracted = extractArticles(html, source.url);
-            } else if (source.method === "browser") {
+            }
+            else if (source.method === "browser") {
                 console.log(" Launching browser...");
                 const browser = await chromium.launch({
                     headless: true
@@ -74,7 +75,8 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                 // console.log("SOURCE:", source.name);
                 // console.log("TEXT SIZE:", text?.length || 0);
                 extracted = extractArticles(text, source.url);
-            } else if (source.method === "sitemap") {
+            }
+            else if (source.method === "sitemap") {
                 const urls = await getSitemapLinks(source.url);
                 for (const url of urls) {
                     try {
@@ -86,7 +88,14 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                         console.warn(`failed: ${url}`);
                     }
                 }
-            } else {
+            }
+         else if (source.method === "local_pdf") {
+            const fs = require('fs');
+            const buffer = fs.readFileSync(source.url);
+            const text = await parsePdf(buffer);
+            extracted = extractArticles(text, source.url);
+        }
+            else {
                 throw new Error(`unknown method: ${source.method}`);
             }
 

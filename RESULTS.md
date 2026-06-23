@@ -1,6 +1,6 @@
 # ADLAI Scraper — KSA Legal Corpus Ingestion Service
 
-A standalone Node.js microservice that extracts structured legal articles from Saudi government regulatory sources (ZATCA, Labor Law, Companies Law, etc.) and exposes a simple status API.
+A standalone Node.js microservice that extracts structured legal articles from Saudi government regulatory sources and exposes a simple status API.
 
 ---
 
@@ -16,84 +16,126 @@ This service is responsible for:
 
 ---
 
+## Installation
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+---
+
+## Configuration
+
+Sources are defined in `scr/config/sources.config.js`. Each source has:
+
+```js
+{
+    name: "zatca",
+    url: "https://...",
+    method: "pdf | html | browser | local_pdf"
+}
+```
+
+To add or change a source, edit this file only — no code changes needed.
+
+---
+
+## Usage
+
+### Run with server (recommended)
+
+```bash
+node server.js
+```
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /run` | Start scraping in background (returns immediately) |
+| `GET /status` | Check live progress per source |
+
+### Run directly (no server)
+
+```bash
+node index.js
+```
+
+### Run a single source
+
+Edit `scr/config/sources.config.js` to keep only the source you want, then run `node index.js`.
+
+---
+
+## Output
+
+Results are saved to:
+
+```
+output/
+├── zatca/
+│   ├── zatca_articles.json
+│   └── zatca_full.txt
+├── labor/
+│   ├── labor_articles.json
+│   └── labor_full.txt
+└── ...
+```
+
+Each article in JSON:
+
+```json
+{
+  "article_number": 1,
+  "text": "...",
+  "source_url": "https://...",
+  "fetched_at": "2026-06-23T07:50:00.000Z"
+}
+```
+
+---
+
 ## Architecture
 
-* PDF parsing (axios + buffer processing)
-* HTML scraping (cheerio-based extraction)
-* Browser automation (Playwright for JS-rendered portals)
-* Unified article extraction engine with fallback logic
-* Deduplication and ordering layer
-* JSON output generation per source
-* Real-time `/status` tracking endpoint
+```
+adlai-scraper/
+├── server.js               Express server (/run + /status)
+├── index.js                Direct runner
+├── scr/
+│   ├── config/             Sources configuration
+│   ├── crawler/            Main orchestrator
+│   ├── fetchers/           HTTP (axios) + Browser (Playwright)
+│   ├── parsers/            Article extraction + PDF parsing
+│   ├── storage/            File writer (JSON + TXT)
+│   └── api/                Status state manager
+├── input/                  Manually downloaded PDFs (if needed)
+└── output/                 Generated article files
+```
 
 ---
 
 ## Sources Status (Latest Run)
 
-| Source                | Status    | Articles | Method  | Notes                                       |
-| --------------------- | --------- | -------- | ------- | ------------------------------------------- |
-| ZATCA (VAT Agreement) | ✅ Success | 109      | PDF     | Clean extraction with fallback segmentation |
-| Labor Law             | ✅ Success | 227      | PDF     | Stable structured article extraction        |
-| Companies Law         | ✅ Success | 230      | Browser | Extracted via Playwright after JS rendering |
+| Source | Status | Articles | Method | Notes |
+|--------|--------|----------|--------|-------|
+| ZATCA (VAT Agreement) | ✅ Success | 109 | PDF | Clean Arabic extraction |
+| Labor Law | ✅ Success | 227 | PDF | English PDF from hrsd.gov.sa |
+| Companies Law | ✅ Success | 230 | Browser | Playwright extraction from BOE portal |
+| PDPL | ✅ Success | 42 | Local PDF | Manual download required — portal blocks automated access |
+| SAMA | ✅ Success | 31 | Browser | Playwright from rulebook.sama.gov.sa |
+| CMA | ✅ Success | 24 | PDF | PDF from cma.gov.sa |
+| NCA | ✅ Success | 1 | Browser | Page loads but minimal structured content |
+| MISA | ✅ Success | 17 | PDF | Investment Law PDF from misa.gov.sa |
+
+**Total: 681 articles across 8 sources**
+
+See `RESULTS.md` for full details.
 
 ---
 
-## Failed Sources
+## Resilience
 
-| Source | Status   | Reason                                          |
-| ------ | -------- | ----------------------------------------------- |
-| PDPL   | ❌ Failed | PDF URL returns HTML redirect                   |
-| SAMA   | ❌ Failed | Geo/IP restriction outside KSA                  |
-| CMA    | ❌ Failed | No stable DOM structure (fully dynamic content) |
-| NCA    | ❌ Failed | Endpoint returns 404                            |
-| MISA   | ❌ Failed | Requires authenticated session                  |
-
----
-
-## What Worked Well
-
-* Multi-format ingestion (PDF / HTML / Browser)
-* Robust fallback parsing for legal documents
-* Stable article extraction for structured sources
-* Independent source execution (failure isolation)
-* Real-time status API (`/status`)
-* Background execution (`/run` endpoint)
-* No system-wide crashes on source failure
-
----
-
-## Key Improvements Achieved
-
-* Fixed weak regex-based article detection
-* Introduced fallback segmentation for unstructured PDFs
-* Stabilized Companies Law extraction using Playwright
-* Improved resilience across all sources
-* Eliminated zero-result failures in main sources
-
----
-
-## Data Output Summary
-
-* **Total Articles Extracted:** 566
-* **Successful Sources:** 3 / 8
-* **Failed Sources:** 5 / 8
-
----
-
-## Honest Assessment
-
-The system successfully implements a **resilient multi-source legal data ingestion pipeline**.
-
-Remaining failures are due to:
-
-* Access restrictions (geo/IP/authentication)
-* Dynamic JavaScript rendering without stable selectors
-* External infrastructure limitations
-
-These are not parsing failures but **environmental constraints**.
-
----
-
-## Final Note
-
-The pipeline is production-ready at ingestion level and provides structured, clean legal corpora suitable for downstream AI processing and retrieval systems.
+* One failing source never crashes the others
+* Configurable timeout + retry with exponential backoff
+* Clear per-source error logging (timeout / empty content / parse error)
+* `/run` returns immediately — scraping runs in background
+* `/status` returns live per-source breakdown at any time

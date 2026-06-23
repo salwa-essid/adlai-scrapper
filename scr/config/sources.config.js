@@ -16,27 +16,27 @@ module.exports = [
     },
     {
         name: "pdpl",
-        url: "https://sdaia.gov.sa/ar/SDAIA/about/Documents/Personal%20Data%20Protection%20Law.pdf",
-        method: "pdf"
+        url: "./input/pdpl.pdf",
+        method: "local_pdf"
     },
     {
         name: "sama",
-        url: "https://www.sama.gov.sa/ar-SA/Laws/BankingLaws/Pages/BankingControlLaw.aspx",
-        method: "html"
+        url: "https://rulebook.sama.gov.sa/ar/نظام-مراقبة-البنوك",
+        method: "browser"
     },
     {
         name: "cma",
-        url: "https://cma.org.sa/ar/Market/Regulations/pages/CapitalMarketLaw.aspx",
-        method: "html"
+        url: "https://cma.gov.sa/en/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
+        method: "pdf"
     },
     {
         name: "nca",
-        url: "https://nca.gov.sa/ar/pages/regulations.aspx",
-        method: "html"
+        url: "https://nca.gov.sa/en/regulatory-documents/",
+        method: "browser"
     },
     {
         name: "misa",
-        url: "https://misa.gov.sa/en/regulations/",
-        method: "browser"
-    }
+        url: "https://misa.gov.sa/app/uploads/2025/07/Investment-Law.pdf",
+        method: "pdf"
+    },
 ];
