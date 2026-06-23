@@ -50,12 +50,12 @@ node server.js
 ### Run directly
 
 ```bash
-node index.js
+node server.js
 ```
 
 ### Run a single source
 
-Edit `scr/config/sources.config.js` to keep only the source you want, then run `node index.js`.
+Edit `scr/config/sources.config.js` to keep only the source you want, then run `node server.js`.
 
 ---
 

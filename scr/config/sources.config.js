@@ -29,6 +29,7 @@ module.exports = [
         url: "https://cma.gov.sa/en/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
         method: "pdf"
     },
+
     {
         name: "nca",
         url: "https://nca.gov.sa/en/regulatory-documents/",
