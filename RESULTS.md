@@ -1,126 +1,13 @@
-# ADLAI Scraper — KSA Legal Corpus Ingestion Service
+# RESULTS.md — Scraping Results
 
-A standalone Node.js microservice that extracts structured legal articles from Saudi government regulatory sources and exposes a simple status API.
-
----
-
-## Purpose
-
-This service is responsible for:
-
-* Crawling government legal sources
-* Extracting legal texts from PDFs, HTML, and browser-rendered pages
-* Splitting documents into structured legal articles
-* Producing clean datasets for downstream AI systems (ADLAI)
-* Providing runtime status monitoring via API
-
----
-
-## Installation
-
-```bash
-npm install
-npx playwright install chromium
-```
-
----
-
-## Configuration
-
-Sources are defined in `scr/config/sources.config.js`. Each source has:
-
-```js
-{
-    name: "zatca",
-    url: "https://...",
-    method: "pdf | html | browser | local_pdf"
-}
-```
-
-To add or change a source, edit this file only — no code changes needed.
-
----
-
-## Usage
-
-### Run with server (recommended)
-
-```bash
-node server.js
-```
-
-| Endpoint | Description |
-|----------|-------------|
-| `GET /run` | Start scraping in background (returns immediately) |
-| `GET /status` | Check live progress per source |
-
-### Run directly (no server)
-
-```bash
-node index.js
-```
-
-### Run a single source
-
-Edit `scr/config/sources.config.js` to keep only the source you want, then run `node index.js`.
-
----
-
-## Output
-
-Results are saved to:
-
-```
-output/
-├── zatca/
-│   ├── zatca_articles.json
-│   └── zatca_full.txt
-├── labor/
-│   ├── labor_articles.json
-│   └── labor_full.txt
-└── ...
-```
-
-Each article in JSON:
-
-```json
-{
-  "article_number": 1,
-  "text": "...",
-  "source_url": "https://...",
-  "fetched_at": "2026-06-23T07:50:00.000Z"
-}
-```
-
----
-
-## Architecture
-
-```
-adlai-scraper/
-├── server.js               Express server (/run + /status)
-├── index.js                Direct runner
-├── scr/
-│   ├── config/             Sources configuration
-│   ├── crawler/            Main orchestrator
-│   ├── fetchers/           HTTP (axios) + Browser (Playwright)
-│   ├── parsers/            Article extraction + PDF parsing
-│   ├── storage/            File writer (JSON + TXT)
-│   └── api/                Status state manager
-├── input/                  Manually downloaded PDFs (if needed)
-└── output/                 Generated article files
-```
-
----
-
-## Sources Status (Latest Run)
+## Final Run Summary
 
 | Source | Status | Articles | Method | Notes |
 |--------|--------|----------|--------|-------|
-| ZATCA (VAT Agreement) | ✅ Success | 109 | PDF | Clean Arabic extraction |
+| ZATCA (VAT Agreement) | ✅ Success | 109 | PDF | Arabic PDF, clean extraction |
 | Labor Law | ✅ Success | 227 | PDF | English PDF from hrsd.gov.sa |
 | Companies Law | ✅ Success | 230 | Browser | Playwright extraction from BOE portal |
-| PDPL | ✅ Success | 42 | Local PDF | Manual download required — portal blocks automated access |
+| PDPL | ✅ Success | 42 | Local PDF | Portal blocks automated access — manual download required |
 | SAMA | ✅ Success | 31 | Browser | Playwright from rulebook.sama.gov.sa |
 | CMA | ✅ Success | 24 | PDF | PDF from cma.gov.sa |
 | NCA | ✅ Success | 1 | Browser | Page loads but minimal structured content |
@@ -128,14 +15,29 @@ adlai-scraper/
 
 **Total: 681 articles across 8 sources**
 
-See `RESULTS.md` for full details.
+---
+
+## What Worked
+
+- PDF extraction reliable for open government PDFs
+- Playwright handles JS-rendered portals (BOE, SAMA, NCA)
+- Arabic text intact and readable in all outputs
+- Article splitting correctly identifies individual articles using Arabic and English patterns
+- Resilience — one failing source never crashed others
+- Retry + timeout logic with exponential backoff
+- `/run` starts scraping in background, returns immediately
+- `/status` returns live per-source breakdown
 
 ---
 
-## Resilience
+## Notes
 
-* One failing source never crashes the others
-* Configurable timeout + retry with exponential backoff
-* Clear per-source error logging (timeout / empty content / parse error)
-* `/run` returns immediately — scraping runs in background
-* `/status` returns live per-source breakdown at any time
+- **PDPL**: PDF required manual download — portal blocks automated requests. Saved locally in `input/` folder.
+- **NCA**: Portal loads successfully but regulatory documents are card-based with minimal structured article text. Only 1 article extracted.
+- **ZATCA**: VAT Agreement extracted successfully. Additional ZATCA e-invoicing guidelines available as separate PDFs if needed.
+
+---
+
+## Honest Assessment
+
+**8 of 8 sources attempted, 8 succeeded.** Total 681 articles extracted and saved in structured JSON + TXT format. All files available in `output/` directory. Arabic text is intact across all Arabic-language sources.
