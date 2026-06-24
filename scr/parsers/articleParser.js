@@ -17,20 +17,65 @@ function detectLanguage(text) {
     return arabicChars > latinChars ? "ar" : "en";
 }
 
+// Arabic ordinals for "أولاً، ثانياً..." used in Resolution docs
+const ARABIC_ORDINALS = [
+    "أولاً","ثانياً","ثالثاً","رابعاً","خامساً","سادساً","سابعاً","ثامناً","تاسعاً","عاشراً"
+];
+
 function extractArticles(rawText, sourceUrl) {
     const text = rawText?.trim()?.startsWith("<")
         ? cleanHtml(rawText)
         : (rawText || "").replace(/\s+/g, " ").trim();
+
     if (!text || text.length < 200) return [];
 
-    //  regex (covers real world PDFs)
-    const pattern =
-        /(المادة\s*[-:]?\s*(?:\d+|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|العاشرة)|Article\s*[-:]?\s*\d+)/gi;
-    const matches = [...text.matchAll(pattern)];
-    console.log("DEBUG matches found:", matches.length);
-    //  IMPORTANT: fallback  0
-    if (matches.length === 0) {
-        console.log("no article markers found → fallback mode activated");
+    // Pattern 1: Standard article headings — Arabic & English
+    // Must be at word boundary, NOT preceded by prepositions (of, من, في, بموجب...)
+    // Requires a colon, newline, or double-space after the number (not mid-sentence)
+    const articlePattern =
+        /(?<![a-zA-Z\u0600-\u06FF\d،,])(المادة\s+(?:\d+|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|العاشرة)(?:\s*[-–:]|\s{2,}|\s*\n))/gim;
+
+    // Pattern 2: Arabic ordinals used in Resolution (أولاً: ثانياً: ...)
+    const ordinalPattern = new RegExp(
+        `(?<![\\u0600-\\u06FF])(${ARABIC_ORDINALS.join("|")})\\s*[:\\-]`,
+        "gim"
+    );
+
+    // Pattern 3: Numbered sections for Guidelines (5.1 / 5.2 / 6.1 etc.)
+    // Only at start of a logical block — preceded by space or start, followed by a letter/Arabic char
+    const sectionPattern =
+        /(?:^|\s)(\d{1,2}\.\d{1,2}(?:\.\d{1,2})?)\s*[.\-–]\s*(?=[\u0600-\u06FFa-zA-Z])/gim;
+
+    // Collect all matches with their index and a label
+    let allMatches = [];
+
+    for (const m of text.matchAll(articlePattern)) {
+        allMatches.push({ index: m.index, label: m[0].trim(), type: "article" });
+    }
+    for (const m of text.matchAll(ordinalPattern)) {
+        allMatches.push({ index: m.index, label: m[0].trim(), type: "ordinal" });
+    }
+    for (const m of text.matchAll(sectionPattern)) {
+        allMatches.push({ index: m.index, label: m[1].trim(), type: "section" });
+    }
+
+    // Sort by position
+    allMatches.sort((a, b) => a.index - b.index);
+
+    // Deduplicate overlapping matches (keep earliest)
+    const deduped = [];
+    let lastEnd = -1;
+    for (const m of allMatches) {
+        if (m.index >= lastEnd) {
+            deduped.push(m);
+            lastEnd = m.index + m.label.length;
+        }
+    }
+
+    console.log(`DEBUG matches found: ${deduped.length} (article:${allMatches.filter(m=>m.type==="article").length}, ordinal:${allMatches.filter(m=>m.type==="ordinal").length}, section:${allMatches.filter(m=>m.type==="section").length})`);
+
+    if (deduped.length === 0) {
+        console.log("no article markers found → fallback mode");
         const fallbackBlocks = text
             .split(/\n{2,}|(?=\d+\.)|(?=Chapter\s)/gi)
             .map(t => t.trim())
@@ -45,20 +90,36 @@ function extractArticles(rawText, sourceUrl) {
     }
 
     const articles = [];
-    for (let i = 0; i < matches.length; i++) {
-        const start = matches[i].index;
-        const end = matches[i + 1]?.index || text.length;
+    const seen = new Set();
+
+    for (let i = 0; i < deduped.length; i++) {
+        const start = deduped[i].index;
+        const end = deduped[i + 1]?.index || text.length;
         let block = text.slice(start, end).trim();
-        block = block
-            .replace(/\s+/g, " ")
-            .replace(/(\. ){2,}/g, ". ")
-            .trim();
+        block = block.replace(/\s+/g, " ").trim();
 
         if (block.length < 50) continue;
-        const numberMatch = matches[i][0].match(/\d+/);
-        const articleNumber = numberMatch ? parseInt(numberMatch[0]) : i + 1;
+
+        // Build a unique article_number based on type + label
+        let articleNumber;
+        if (deduped[i].type === "article") {
+            const numMatch = deduped[i].label.match(/\d+/);
+            articleNumber = numMatch ? parseInt(numMatch[0]) : i + 1;
+        } else if (deduped[i].type === "ordinal") {
+            const idx = ARABIC_ORDINALS.findIndex(o => deduped[i].label.startsWith(o));
+            articleNumber = idx + 1;
+        } else {
+            articleNumber = deduped[i].label; // "5.1", "6.2" etc.
+        }
+
+        // Deduplicate within same source_url + type
+        const key = `${sourceUrl}::${deduped[i].type}::${articleNumber}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
         articles.push({
             article_number: articleNumber,
+            article_type: deduped[i].type,
             language: detectLanguage(block),
             text: block,
             source_url: sourceUrl,
