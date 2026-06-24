@@ -1,3 +1,7 @@
 # Node artifact files
 node_modules/
 
+# Environment variables
+.env
+
+.idea/
