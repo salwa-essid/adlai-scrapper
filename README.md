@@ -25,18 +25,27 @@ npx playwright install chromium
 
 ## Configuration
 
-Sources are defined in `scr/config/sources.config.js`:
+All sources are defined in `scr/config/sources.config.js`. Each entry specifies:
 
 ```js
 {
-    name: "zatca",
-        url: "https://...",
-        method: "pdf | html | browser | local_pdf"
+    name: "source_name",          // determines output folder name
+    url:  "https://...",          // single URL
+    // or:
+    urls: ["https://...", "..."], // multiple PDFs merged under one source
+    docLabels: ["label1", "label2"],
+    method: "pdf | multi_pdf | browser | local_pdf | blocked"
 }
 ```
 
+To add, remove, or change a source — edit this file only. No code changes needed.
 
-### Run with server (recommended)
+---
+
+
+## Running
+
+### Start the server
 
 ```bash
 node server.js
@@ -44,18 +53,12 @@ node server.js
 
 | Endpoint | Description |
 |----------|-------------|
-| `GET /run` | Start scraping in background (returns immediately) |
-| `GET /status` | Check live progress per source |
-
-### Run directly
-
-```bash
-node server.js
-```
+| `GET /run` | Start scraping all sources in background (returns immediately) |
+| `GET /status` | Live per-source progress, article counts, and errors |
 
 ### Run a single source
 
-Edit `scr/config/sources.config.js` to keep only the source you want, then run `node server.js`.
+Comment out all other entries in `sources.config.js`, then hit `GET /run`.
 
 ---
 
@@ -63,25 +66,43 @@ Edit `scr/config/sources.config.js` to keep only the source you want, then run `
 
 ```
 output/
-├── zatca/
-│   ├── zatca_articles.json
-│   └── zatca_full.txt
+├── manifest.json                                  ← summary of all sources (ADLAI reads this first)
+├── zatca_einvoicing_regulation/
+│   ├── zatca_einvoicing_regulation_articles.json
+│   └── zatca_einvoicing_regulation_full.txt
+├── zatca_implementation_resolution/
+├── zatca_guidelines/
+├── zatca_vat_agreement/
 ├── labor/
-│   ├── labor_articles.json
-│   └── labor_full.txt
-└── ...
+├── companies/
+├── pdpl/
+├── sama/
+├── cma/
+├── nca/
+└── misa/
 ```
 
-Each article in JSON:
+Each article entry in the JSON:
 
 ```json
 {
   "article_number": 1,
+  "language": "ar",
   "text": "...",
   "source_url": "https://...",
-  "fetched_at": "2026-06-23T07:50:00.000Z"
+  "fetched_at": "2026-06-24T11:53:38.745Z"
 }
 ```
+
+For `multi_pdf` sources, each article also carries:
+```json
+{
+  "source_doc": "regulation",
+  "global_index": 3
+}
+```
+
+`manifest.json` is written after every run and lists `status`, `article_count`, and `source_url` per source.
 
 ---
 
@@ -89,43 +110,27 @@ Each article in JSON:
 
 ```
 adlai-scraper/
-├── server.js               Express server (/run + /status)
+├── server.js                        Express server — /run + /status
 ├── scr/
-│   ├── config/             Sources configuration
-│   ├── crawler/            Main orchestrator
-│   ├── fetchers/           HTTP (axios) + Browser (Playwright)
-│   ├── parsers/            Article extraction + PDF parsing
-│   ├── storage/            File writer (JSON + TXT)
-│   └── api/                Status state manager
-├── input/                  Manually downloaded PDFs
-└── output/                 Generated article files
+│   ├── config/sources.config.js     All source definitions (edit here to add sources)
+│   ├── crawler/crawler.js           Main orchestrator — loops sources, handles all methods
+│   ├── parsers/
+│   │   ├── articleParser.js         Article splitting — supports Arabic, English, ordinals, sections
+│   │   ├── pdfParser.js             PDF text extraction (pdf-parse)
+│   │   └── fetcher.js               HTTP download with retry
+│   ├── storage/
+│   │   ├── fileWriter.js            Writes _articles.json + _full.txt per source
+│   │   └── manifestWriter.js        Writes output/manifest.json after each run
+│   └── utils/                       Retry logic, logging, text cleaning
+├── input/                           Manually downloaded PDFs (pdpl, cma)
+└── output/                          Generated at runtime — gitignored
 ```
-
----
-
-## Sources Status (Latest Run)
-
-| Source | Status | Articles | Method |
-|--------|--------|----------|--------|
-| ZATCA (VAT Agreement) | ✅ Success | 109 | PDF |
-| Labor Law | ✅ Success | 227 | PDF |
-| Companies Law | ✅ Success | 230 | Browser |
-| PDPL | ✅ Success | 42 | Local PDF |
-| SAMA | ✅ Success | 31 | Browser |
-| CMA | ✅ Success | 24 | PDF |
-| NCA | ✅ Success | 1 | Browser |
-| MISA | ✅ Success | 17 | PDF |
-
-**Total: 681 articles across 8 sources**
-
-See `RESULTS.md` for full details.
 
 ---
 
 ## Resilience
 
-* One failing source never crashes the others
-* Configurable timeout + retry with exponential backoff
-* Clear per-source error logging
-* `/run` returns immediately — scraping runs in background
-* `/status` returns live per-source breakdown at any time
+- One failing source never stops the others — each runs in an isolated try/catch
+- Configurable retry with exponential backoff per source
+- Sources with `method: "blocked"` are skipped cleanly and reported in manifest
+- `/status` and `manifest.json` always reflect the true state — including failures and reasons
