@@ -23,18 +23,43 @@ async function fetchPage(url, retries = 3) {
     }
 }
 async function downloadPdf(url) {
-    const res = await axios.get(url, {
-        responseType: "arraybuffer",
-        timeout: 30000,
-        httpsAgent: agent,
-        headers: { "User-Agent": "Mozilla/5.0" }
-    });
+    try {
+        const res = await axios.get(url, {
+            responseType: "arraybuffer",
+            timeout: 60000,
+            maxRedirects: 10,
+            httpsAgent: agent,
+            headers: {
+                "User-Agent":
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/137.0 Safari/537.36"
+            }
+        });
 
-    console.log("URL:", url);
-    console.log("CONTENT-TYPE:", res.headers["content-type"]);
-    console.log("STATUS:", res.status);
+        return Buffer.from(res.data);
 
-    return Buffer.from(res.data);
+    } catch (err) {
+        console.log("AXIOS FAILED -> PLAYWRIGHT FALLBACK");
+
+        const browser = await chromium.launch({
+            headless: true
+        });
+
+        try {
+            const page = await browser.newPage();
+
+            const response = await page.goto(url, {
+                waitUntil: "domcontentloaded",
+                timeout: 60000
+            });
+
+            const buffer = await response.body();
+
+            return Buffer.from(buffer);
+
+        } finally {
+            await browser.close();
+        }
+    }
 }
 
 module.exports = { fetchPage, downloadPdf };

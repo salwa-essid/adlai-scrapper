@@ -1,5 +1,337 @@
-=== المادة 1 ===
-أولاً - الموافقة على نظام مراقبة البنوك بالصيغة المرافقة لهذا.
+=== المادة saudi_central_bank_law_1 ===
+2 
+ 
+ 
+NOTE: 
+The translation of Saudi laws takes the following into consideration: 
+ Words used in the singular form include the plural and vice versa. 
+ Words used in the masculine form include the feminine. 
+ Words used in the present tense include the present as well as the future. 
+ The word “person” or “persons” and their related pronouns (he, his, him, they, their, 
+them) refer to a natural and legal person.
 
-=== المادة 2 ===
-ثانياً - على نائب رئيس مجلس الوزراء ووزير المالية والاقتصاد الوطني تنفيذ مرسومنا هذا. فيصل بن عبد العزيز آل سعود المادة الأولى يقصد بالاصطلاحات الآتية في خصوص هذا النظام المعاني المحددة لها في هذه المادة: أ) بنك: أي شخص طبيعي أو اعتباري يزاول في المملكة أي عمل من الأعمال المصرفية بصفة أساسية. ب) الأعمال المصرفية: أعمال تسلم النقود كودائع جارية أو ثابتة، وفتح الحسابات الجارية وفتح الاعتمادات وإصدار خطابات الضمان ودفع وتحصيل الشيكات أو أذونات الصرف وغيرها من الأوراق ذات القيمة، وخصم السندات والكمبيالات وغيرها من الأوراق التجارية، وأعمال الصرف الأجنبي، وغير ذلك من أعمال البنوك. ج) البنك الوطني: البنك الذي يكون مركزه الرئيسي في المملكة وماله من فروع فيها. د) البنك الاجنبي: البنك الذي يكون مركزه الرئيسي خارج المملكة وماله من فروع فيها. هـ) البنك المركزي: البنك المركزي السعودي*. و) رأس المال المستثمر: رأس المال الذي يخصصه بنك أجنبي لاستعمال فروعه في المملكة. * حل اسم "البنك المركزي السعودي" محل اسم "مؤسسة النقد العربي السعودي" بموجب نظام البنك المركزي السعودي رقم(م/36) بتاريخ 1442/4/11هـ. المادة الثانية يحظر على أي شخص طبيعي أو اعتباري غير مرخص له طبقاً لأحكام هذا النظام أن يزاول في المملكة أي عمل من الأعمال المصرفية بصفة أساسية. ومع ذلك: أ) يجوز للأشخاص الاعتبارية المرخص لها بموجب نظام آخر أو مرسوم خاص بمزاولة الأعمال المصرفية، أن تزاول هذه الأعمال في حدود أغراضها. ب) يجوز للصيارفة المرخص لهم أن يزاولوا بصفة أساسية أعمال تبديل العملة نقوداً معدنية أو أوراقاً نقدية دون سائر الأعمال المصرفية. المادة الثالثة يقدم طلب منح الترخيص لمزاولة الأعمال المصرفية في المملكة إلى البنك المركزي الذي يقوم بعد حصوله على كافة البيانات الضرورية بدراسة الطلب وتقديم توصياته بشأنه لوزير المالية والاقتصاد الوطني ويشترط في الترخيص لبنك وطني: ١) أن يكون شركة مساهمة سعودية. ٢) ألا يقل رأس مالها المدفوع عن مليونين ونصف مليون ريال سعودي وأن تدفع جميع اكتتابات رأس المال نقداً. ٣) أن يكون مؤسسوها وأعضاء مجلس إدارتها حسني السمعة. ٤) أن يوافق وزير المالية والاقتصاد الوطني على عقد تأسيسها ونظامها. ويشترط للترخيص لبنك أجنبي بتأسيس فرع أو فروع له في المملكة أن تُستوفى الشروط التي يحددها مجلس الوزراء بناء على اقتراح وزير المالية والاقتصاد الوطني، ويصدر الترخيص في جميع الأحوال من وزير المالية والاقتصاد الوطني بعد موافقة مجلس الوزراء. المادة الرابعة استثناء من أحكام المادة السابقة، يعمل بالتراخيص والتصاريح الصادرة للأشخاص الذين يزاولون الأعمال المصرفية في المملكة والسارية المفعول في تاريخ نفاذ هذا النظام. و مع ذلك يجوز للبنك المركزي أن يطلب من هؤلاء الأشخاص أية مستندات أو بيانات يراها ضرورية، وأن يطلب منهم بعد موافقة مجلس الوزراء مراعاة كل أو بعض أحكام المادة الثالثة من هذا النظام في خلال المدة التي يحددها. المادة الخامسة يحظر على أي شخص غير مرخص له بمزاولة الأعمال المصرفية في المملكة بصفة أساسية أن يستعمل كلمة (بنك) ومرادفاتها أو أي تعبير يماثلها في أي لغة سواء في أوراقه، أو مطبوعاته، أو عنوانه التجاري أو اسمه أو في دعايته. المادة السادسة لا يجوز أن تزيد التزامات البنك من الودائع على خمسة عشر مثلاً من مجموع احتياطياته ورأس ماله المدفوع أو المستثمر، فإذا زادت التزامات الودائع على هذا القدر وجب على البنك - في خلال شهر من تاريخ تقديم البيان المنصوص عليه في الفقرة الأولى من المادة الخامسة عشرة - أن يزيد رأسماله واحتياطياته إلى الحد المقرر أو أن يودع لدى البنك المركزي (%٥٠) خمسين في المئة من المبلغ الزائد. المادة السابعة على كل بنك أن يحتفظ لدى البنك المركزي في جميع الأوقات بوديعة نظامية لا تقل عن (%١٥) خمسة عشر في المئة من التزامات ودائعه. ويجوز للبنك المركزي تعديل هذه النسبة وفقاً لمقتضيات الصالح العام بشرط ألا تقل عن (%١٠) عشرة في المئة ولا تزيد على (%١٧,٥) سبعة عشر ونصف في المئة .ومع ذلك فللبنك المركزي أن يتجاوز هذين الحدين بعد موافقة وزير المالية والاقتصاد الوطني. وعلى كل بنك كذلك أن يحتفظ علاوة على الوديعة المنصوص عليها في الفقرة السابقة باحتياطي سيولة لا يقل عن (%١٥) خمسة عشر في المئة من التزامات ودائعه. ويكون هذا الاحتياطي من النقد أو الذهب أو الأصول التي يمكن تحويلها إلى نقود في أجل قصير لا يزيد على ثلاثين يوما. ويجوز للبنك المركزي متى رأى ذلك ضرورياً أن يرفع هذه النسبة بحيث لا تزيد على (% ٢٠) عشرين في المئة. المادة الثامنة يحظر على أي بنك أن يعطي قرضا أو أن يمنح تسهيلات ائتمانية أو أن يقدم كفالة أو ضمانا ماليا آخر لصالح أي شخص طبيعي أو اعتباري بمبالغ يتجاوز مجموعها (%٢٥) خمسة وعشرين في المائة من مجموع احتياطيات البنك ورأس ماله المدفوع أو المستثمر. ويجوز للبنك المركزي لمقتضيات المصلحة العامة وبالشروط التي يحددها أن تزيد هذه النسبة إلى (%٥٠) خمسين في المئة. ولا تسري أحكام الفقرة السابقة على المعاملات التي تتم بين البنوك أو بين المراكز الرئيسية للبنوك وفروعها، أو بين هذه الفروع. المادة التاسعة يحظر على أي بنك أن يزاول الأعمال الآتية: ١) أن يعطي بضمان أسهمه قرضاً أو أن يمنح تسهيلات ائتمانية أو أن يقدم كفالة أو ضماناً أو أن يتحمل أي التزام مالي آخر. ٢) أن يعطي بلا ضمان قرضاً أو أن يمنح تسهيلات ائتمانية أو أن يقدم كفالة أو ضماناً أو أن يتحمل أي التزام مالي آخر لأي من: ( أ ) أعضاء مجلس إدارته أو مراقبي حساباته. (ب) المنشآت غير المتخذة شكل شركات مساهمة متى كان أحد أعضاء مجلس إدارتها أو أحد مراقبي حساباتها شريكاً فيها أو مديراً لها أو له فيها مصلحة مالية مباشرة. (ج) الأشخاص أو المنشآت غير المتخذة شكل شركات مساهمة متى كان أحد أعضاء مجلس إدارة البنك أو أحد مراقبي حساباته كفيلاً لها. ٣) أن يعطي بلا ضمان قرضاً أو أن يمنح تسهيلات ائتمانية أو أن يقدم كفالة أو ضماناً أو أن يتحمل أي التزام مالي آخر لصالح أحد موظفيه أو مستخدميه بمبالغ تزيد على رواتبه مدة أربعة أشهر. وكل عضو مجلس إدارة بنك أو مراقب حسابات أو مدير له يخالف أحكام الفقرتين (٢ ,٣) من هذه المادة يعتبر مستقيلاً من وظيفته. المادة العاشرة يحظر على أي بنك أن يزاول الأعمال الآتية: ١) الاشتغال لحسابه أو بالعمولة، بتجارة الجملة أو التجزئة بما في ذلك تجارة الاستيراد أو التصدير. ٢) أن تكون له مصلحة مباشرة كمساهم أو كشريك أو كمالك أو بأية صفة أخرى في أي مشروع تجاري أو صناعي أو زراعي أو أي مشروع آخر، إلا في الحدود المشار إليها في الفقرة (٤) من هذه المادة، ويستثنى من ذلك ما يؤول للبنك وفاء لدين له قبل الغير، على أن يقوم البنك بتصفية ما آل إليه في خلال سنتين أو في خلال أية مدة أطول تحدد بعد الاتفاق مع البنك المركزي. ٣) شراء أسهم أي بنك يعمل في المملكة بدون موافقة البنك المركزي. ٤) امتلاك أسهم أية شركة مساهمة أخرى مؤسسةٌ في المملكة تزيد قيمتها على (%١٠) عشرة في المئة من رأس مالها المدفوع ويشترط ألا يتجاوز القيمة الاسمية لهذه الأسهم (%٢٠) عشرين بالمئة من رأس مال البنك المدفوع واحتياطياته. ويجوز للبنك المركزي عند الاقتضاء زيادة النسبتين المذكورتين. ٥) امتلاك عقار أو استئجاره إلا إذ كان ذلك ضرورياً لإدارة أعمال البنك أو لسكنى موظفيه أو للترفيه عنهم أو وفاء لدين للبنك قِبَل الغير. وإذا امتلك البنك عقاراً وفاء لدين له قبل الغير ولم يكن هذا العقار لازماً لإدارة أعماله أو سكنى موظفيه أو الترفيه عنهم، وجب عليه تصفيته في خلال ثلاث سنوات من تاريخ أيلولة العقار إليه، أو إذا وجدت ظروف استثنائية لها ما يبررها في خلال المدة أو المدد التي يوافق عليها البنك المركزي وبالشروط التي يحددها. فإذا تملك البنك قبل تاريخ نفاذ هذا النظام عقارات على خلاف أحكام هذه الفقرة فيجب عليه أن يقوم بتصفيتها تدريجياً في خلال سبع سنوات أو إذا وجدت ظروف استثنائية لها ما يبررها في خلال المدة أو المدد التي يوافق عليها البنك المركزي وبالشروط التي يحددها. واستثناء من أحكام الفقرة (٥) من هذه المادة يجوز للبنك - إذا وجدت ظروف خاصة لها ما يبررها وبشرط موافقة البنك المركزي على ذلك - أن يتملك عقاراً لا تزيد قيمته على (%٢٠) عشرين في المئة من رأس ماله المدفوع واحتياطياته. المادة الحادية عشرة يحظر على أي بنك أن يقوم بأي عمل من الأعمال الآتية إلا بعد الحصول على ترخيص كتابي مسبق من البنك المركزي وبالشروط التي يحددها: أ) تعديل تكوين راس ماله المدفوع أو المستثمر. ب) الاتفاق على الاندماج أو المشاركة في نشاط بنك آخر أو أية منشأة أخرى تزاول الأعمال المصرفية. ج) امتلاك أسهم أية شركة مؤسسة في خارج المملكة. د) التوقف عن مزاولة الأعمال المصرفية، وفي هذه الحالة يجب على البنك المركزي قبل الموافقة على هذا التوقف أن يتحقق من قيام البنك بعمل الترتيبات اللازمة للمحافظة على حقوق المودعين. هـ) فتح فروع أو مكاتب أخرى في المملكة، وكذلك فتح فروع أو مكاتب أخرى للبنوك الوطنية في خارج المملكة، وعلى البنك المركزي قبل أن يمنح الترخيص الكتابي في الحالات المنصوص عليها في هذه الفقرة أن يحصل على موافقة وزير المالية والاقتصاد الوطني عليه. المادة الثانية عشرة لا يجوز أن يكون الشخص عضواً في مجلس إدارة أكثر من بنك واحد. ولا يجوز إلا بموافقة كتابية مسبقة من البنك المركزي أن يختار عضواً في مجلس إدارة أي بنك أو أن يتولى وظيفة مدير فيه: أ) من كان يشغل مثل هذا المركز أو الوظيفة في منشاة مصرفية صفيت – ولو تمت التصفية قبل تاريخ نفاذ هذا النظام - ولا تصدر موافقة البنك المركزي إلا إذا تبيّن عدم مسئولية هذا الشخص عن هذه التصفية. ب) من عزل من مثل هذا المركز أو الوظيفة في مؤسسة مصرفية ولو كان العزل سابقاً على تاريخ نفاذ هذا النظام. ويجب أن تبنى موافقة البنك المركزي في هذه الحالة على أسباب مقبولة. ويعتبر مستقيلاً كل عضو مجلس إدارة بنك أو مدير صدر حكم بإشهار إفلاسه أو حكم عليه في جريمة مخلة بالشرف. المادة الثالثة عشرة يجب على كل بنك قبل الإعلان عن توزيع أية أرباح أن يرحل إلى الاحتياطي النظامي مبلغاً لا يقل عن ٢٥ % خمسة وعشرين في المئة من أرباحه السنوية الصافية إلى أن يصبح الاحتياطي المذكور مساوياً على الأقل لرأس مال البنك المدفوع. ويحظر على أي بنك أن يدفع أرباحاً أو أن يحول أي جزء من أرباحه إلى الخارج إلا بعد أن يستهلك جميع المصروفات الرأسمالية بما في ذلك مصروفات التأسيس وأي خسارة يتكبدها. ويقع باطلاً كل إعلان عن توزيع أرباح أو دفع أرباح خلاف أحكام هذه المادة. المادة الرابعة عشرة يجب على كل بنك أن يعين سنوياً مراقبين اثنين للحسابات من القائمة المسجلة بوزارة التجارة والصناعة، وعلى مراقبي الحسابات تقديم تقرير عن الميزانية السنوية وحساب الأرباح والخسائر، ويجب أن يتضمن هذا التقرير رأي مراقبي الحسابات في مدى تمثيل الميزانية للمركز المالي للبنك، ومدى اقتناعهما بأية إيضاحات أو معلومات يكونان قد طلباها من مديري البنك أو غيرهم من موظفيه. وبالنسبة للبنوك المتخذة شكل شركة يجب أن يتلى التقرير المشار إليه في الفقرة السابقة مع التقرير السنوي لإدارة البنك في اجتماع الشركاء الذي يجب أن يتم في خلال الأشهر الستة التالية لانقضاء السنة المالية للبنك على الأكثر، ويجب على إدارة البنك إرسال صورة من هذين التقريرين إلى البنك المركزي. ويسرى حكم الفقرة الأولى من هذه المادة على البنوك الأجنبية بالنسبة لفروعها في المملكة ويجب عليها أن ترسل إلى البنك المركزي صورة من تقرير مراقبي الحسابات. المادة الخامسة عشرة يجب على كل بنك أن يرسل إلى البنك المركزي بياناً موحداً شهرياً عن مركزه المالي، وذلك في نهاية الشهر التالي، ويجب أن يكون هذا البيان حقيقياً وصحيحاً وبالشكل الذي يحدده البنك المركزي، كما يجب عليه أن يرسل إلى البنك المركزي في خلال الأشهر الستة من انقضاء سنته المالية صورة من ميزانيته السنوية وحساب أرباحه وخسائره مصدقاً عليها من مراقبي حساباته وذلك بالشكل الذي يحدده البنك المركزي. المادة السادسة عشرة يجوز للبنك المركزي بعد موافقة وزير المالية والاقتصاد الوطني أن يضع قواعد عامة لتنظيم المسائل الآتية: ١) الحد الأعلى لمجموع القروض التي يجوز لبنك أو أكثر تقديمها. ٢) منع أو تحديد أنواع معينة من القروض أو المعاملات الأخرى. ٣) تحديد الأوضاع و الشروط التي يجب على البنك مراعاتها عند تعامله في أنواع معينة من الأعمال مع عملائه. ٤) التأمينات النقدية التي يجب أن يحتفظ بها البنك مقابل أنواع معينة من الاعتمادات أو الكفالات. ٥) الحد الأدنی لنسب الضمان التي يجب مراعاتها في أنواع معينة من القروض بين مبالغ القرض والأصول المقدمة ضماناً لها. ٦) تحديد الموجودات التي يجب على كل بنك الاحتفاظ بها داخل المملكة، والتي لا يجوز أن تقل قيمتها عن نسبة مئوية من التزامات الودائع يحددها البنك المركزي من وقت لآخر. ويجوز للبنك المركزي بقرارات يصدرها من وقت لآخر: ١) تحـديد المقصود في هذا النظام باصطلاح (التزامات الودائع). ٢) تحديد أيام عطلات البنوك وساعات العمل فيها. المادة السابعة عشرة يجوز للبنك المركزي أن يطلب في أي وقت من أي بنك أن يقدم إليه في الوقت وبالشكل اللذين يحددهما أية بيانات يراها ضرورية لتحقيق أغراض هذا النظام. المادة الثامنة عشرة للبنك المركزي بعد موافقة وزير المالية والاقتصاد الوطني أن يجري تفتيشاً على سجلات وحسابات أي بنك، سواءٌ بمعرفة موظفيه أو بمعرفة مراجعين يعيّنهم، على أن يتم فحص الدفاتر و حسابات البنك في مقره، وفي هذه الحالة يجب على موظفي البنك أن يقدموا ما يطلب منهم من سجلات وحسابات وغير ذلك من الوثائق التي في حوزتهم أو تحت سلطتهم، وأن يدلوا بما لديهم من معلومات تتعلق بالبنك. المادة التاسعة عشرة يحظر على أي شخص يحصل على أية معلومة أثناء أو بمناسبة قيامه بأي عمل يتعلق بتطبيق أحكام هذا النظام إفشاؤها أو الإفادة منها بأية طريقة. المادة العشرون على البنك المركزي أن ينشر دورياً بيانات موحدة عن المعلومات الرئيسية التي تحتوي عليها البيانات المشار إليها في المادة الخامسة عشرة. المادة الحادية والعشرون يجوز لوزير المالية والاقتصاد الوطني في أحوال استثنائية وبعد موافقة مجلس الوزراء أن يعفي أي بنك من بعض أحكام هذا النظام أو القرارات أو القواعد الصادرة تنفيذاً له، وذلك لمدة محدودة وبالشروط التي تحدد في كل حالة على حدة. المادة الثانية والعشرون يجوز للبنك المركزي إذا تبين أن بنكاً خالف أحكام هذا النظام أو القرارات والقواعد الصادرة تنفيذاً له أو اتبع سياسة من شأنها التأثير بصورة خطيرة على قدرته على الوفاء بالتزاماته أو على سيولة الأموال لديه، أن يتخذ بعد موافقة وزير المالية والاقتصاد الوطني إجراءً أو أكثر من الإجراءات الآتية: أ) تعيين مستشار أو أكثر لتقديم المشورة للبنك في إدارة أعماله. ب) إيقاف أو عزل أي عضو من أعضاء مجلس إدارة البنك أو أي من موظفيه. ج) تحديد أو منع البنك من منح القروض أو قبول الودائع به. د) إلزام البنك باتخاذ أي خطوات أخرى تراها ضرورية. وإذا تبين البنك المركزي أن بنكاً استمر في مخالفة أحكام هذا النظام أو القرارات والقواعد الصادرة تنفيذاً له، جاز له أن يطلب منه تقديم أسباب ذلك مصحوبة باقتراحاته لتصحيح الأوضاع في خلال المدة التي يحددها، فإذا رأى البنك المركزي أن هذه الاقتراحات لا تفي بالغرض أو إذا قصر البنك في تنفيذ إجراء تعهد به في خلال المدة المذكورة، جاز لوزير المالية والاقتصاد الوطني بعد موافقة مجلس الوزراء إلغاء الترخيص الممنوح للبنك المذكور. المادة الثالثة والعشرون ١) يعاقب بالسجن مدة لا تزيد على سنتين وبغرامة لا تزيد على خمسة آلاف ريال سعودي، عن كل يوم تستمر فيه المخالفة أو بإحدى هاتين العقوبتين، كل من خالف أحكام الفقرة الأولى من المادة الثانية والمادة الخامسة والبنود (أ، ب، ج) من الفقرة الأولى من المادة الحادية عشرة والمادة الثانية عشرة والمادة الثامنة عشرة. ٢) يعاقب بالسجن مدة لا تزيد على سنتين وبغرامة لا تزيد على عشرين ألف ريال سعودي، أو بإحدى هاتين العقوبتين، كلﱡ من خالف أحكام المادة التاسعة عشرة. ٣) يعاقب بالسجن مدة لا تزيد على ستة أشهر وبغرامة لا تزيد على عشرة آلاف ريال سعودي، أو بإحدى هاتين العقوبتين، كلُّ من خالف أحكام المواد الثامنة والتاسعة والعاشرة. ٤) يعاقب بغرامة لا تزيد على خمس مئة ريال سعودي عن كل يوم تستمر فيه المخالفة، كلُّ من خالف أحكام المواد السابعة والرابعة عشرة والخامسة عشرة. ٥) يعاقب بغرامة لا تزيد على خمسة آلاف ريال سعودي، كلُّ من خالف أي حكم آخر من أحكام هذا النظام أو القرارات والقواعد الصادرة تنفيذاً له. ٦) في تطبيق أحكام العقوبات المنصوص عليها في الفقرات (٥,٣,٢) من هذه المادة - إذا كانت - الأفعال المخالفة الصادرة عن الشخص ذاته تحقق غرضاً واحداً وكانت وثيقة الاتصال من حيث القصد والوقت الذي تمت فيه، فإها تعتبر جريمة واحدة وتوقع عليها عقوبة واحدة. ٧) وفي تطبيق أحكام العقوبات المنصوص عليها في هذه المادة - إذا وقع الفعل المخالف تحت أحكام أكثر من عقوبة تطبق على الشخص المخالف العقوبة الأشد. المادة الرابعة والعشرون يكون كل من رئيس مجلس إدارة البنك وعضو مجلس الإدارة المنتدب وأعضاء مجلس الإدارة ومدير المركز الرئيسي ومدير الفرع مسئولين - كل في حدود اختصاصه - عن مخالفة البنك لأحكام هذا النظام أو القرارات والقواعد الصادرة تنفيذاً له. المادة الخامسة والعشرون يعين وزير المالية والاقتصاد الوطني لجنة من ثلاثة أشخاص من خارج البنك المركزي، للفصل في المخالفات المعاقب عليها بمقتضى هذا النظام ويحدد الأوضاع والإجراءات التي تلتزمها في عملها وذلك بناء على طلب البنك المركزي. المادة السادسة والعشرون على نائب رئيس مجلس الوزراء و وزير المالية والاقتصاد الوطني تنفيذ هذا النظام ويعمل به من تاريخ نشره. Book traversal links for Banking Control Law كتيب القواعد (إطلاق تجريبي) الأنظمة واللوائح نظام البنك المركزي السعودي نظام النقد العربي السعودي نظام مراقبة البنوك المادة الأولى المادة الثانية المادة الثالثة المادة الرابعة المادة الخامسة المادة السادسة المادة السابعة المادة الثامنة المادة التاسعة المادة العاشرة المادة الحادية عشرة المادة الثانية عشرة المادة الثالثة عشرة المادة الرابعة عشرة المادة الخامسة عشرة المادة السادسة عشرة المادة السابعة عشرة المادة الثامنة عشرة المادة التاسعة عشرة المادة العشرون المادة الحادية والعشرون المادة الثانية والعشرون المادة الثالثة والعشرون المادة الرابعة والعشرون المادة الخامسة والعشرون المادة السادسة والعشرون قواعد تطبيق أحكام نظام مراقبة البنوك نظام مراقبة شركات التمويل اللائحة التنفيذية لنظام مراقبة شركات التمويل نظام التمويل العقاري اللائحة التنفيذية لنظام التمويل العقاري نظام الإيجار التمويلي اللائحة التنفيذية لنظام الإيجار التمويلي نظام المدفوعات وخدماتها اللائحة التنفيذية لنظام المدفوعات وخدماتها نظام المعلومات الائتمانية اللائحة التنفيذية لنظام المعلومات الائتمانية نظام مكافحة غسل الأموال اللائحة التنفيذية لنظام مكافحة غسل الأموال نظام مكافحة جرائم الإرهاب وتمويله اللائحة التنفيذية لنظام مكافحة جرائم الإرهاب وتمويله نظام معالجة المنشآت المالية المهمّة لائحة تنظيم المقاصة النهائية وترتيبات الضمان المرتبطة بها كافة المؤسسات المالية القطاع المصرفي قطاع التمويل نظم المدفوعات ومقدمو خدمات المدفوعات قطاع الصرافة شركات المعلومات الإئتمانية البيئة التجريبيّة التشريعيّة تعاميم البنك المركزي روابط مهمة حول البنك المركزي السعودي التوظيف المركز الإعلامي الخدمات الإلكترونية منصة البيانات المفتوحة الدعم والمساعدة سياسة الخصوصية الشروط والأحكام خريطة الموقع الشكاوى اتصل بنا العنوان ومعلومات الاتصال المملكة العربية السعودية - الرياض 3000 463 11 966+ 466-2966 / 2936 466 11 966+ الفروع تابعنا البنك المركزي السعودي ، جميع الحقوق محفوظة © 2026
+=== المادة saudi_central_bank_law_2 ===
+Chapter 1: Definitions and General Provisions 
+Article 1 
+In this Law, the following terms and phrases shall have the meanings assigned thereto: 
+Bank: The Saudi Central Bank. 
+Law: The Saudi Central Bank Law. 
+Board: The board of directors of the Bank. 
+Governor: The governor of the Bank. 
+Financial Institution: Any natural or legal person subject to the supervision, oversight, and 
+regulation of the Bank. 
+Article 2 
+The Bank is a financially and administratively independent legal person which reports to the 
+King. Its headquarters shall be in the city of Riyadh, and it may establish branches or cash 
+centers within the Kingdom and open offices or appoint agents and correspondents abroad. 
+Article 3 
+The objectives of the Bank are as follows:
+
+=== المادة saudi_central_bank_law_3 ===
+3. Supporting economic growth. 
+Article 4 
+The Bank shall carry out its duties in accordance with the provisions of this Law, the regulations 
+and policies issued by the Board, and best international standards and practices. To achieve 
+its objectives, the Bank shall have all the necessary powers and carry out the following duties, 
+powers, and competences:
+
+=== المادة saudi_central_bank_law_4 ===
+1. Issuing and regulating currency, including minting, printing, issuing, circulating, 
+withdrawing, canceling, managing, and protecting the national currency, and other related 
+activities, without prejudice to the provisions of the Saudi Arabian Monetary Law.
+
+=== المادة saudi_central_bank_law_5 ===
+7. Establishing, developing, and operating infrastructures of national payment, settlement, 
+and clearing systems; issuing rules, directives, and licenses; and overseeing and supervising
+
+=== المادة saudi_central_bank_law_6 ===
+8. Establishing, developing, and operating financial technology platforms; issuing relevant 
+rules, instructions and licenses; and overseeing and supervising such platforms.
+
+=== المادة saudi_central_bank_law_7 ===
+0. Formulating and managing prudential policies and taking necessary actions and measures 
+for financial institutions, as well as taking necessary measures and procedures to 
+contribute in addressing economic and financial upheavals and crises, whether locally, 
+regionally, or globally.
+
+=== المادة saudi_central_bank_law_8 ===
+1. Taking appropriate procedures and measures to prevent the commission of crimes 
+associated with financial institutions.
+
+=== المادة saudi_central_bank_law_9 ===
+2. Representing and participating in regional and international organizations, authorities, 
+forums, and conferences in which the Bank engages as a member, in accordance with 
+legal procedures.
+
+=== المادة saudi_central_bank_law_10 ===
+3. Cooperating and exchanging expertise with other central banks and counterparts, 
+regional and international organizations, and specialized consulting firms inside the 
+Kingdom and abroad, within its jurisdiction.
+
+=== المادة saudi_central_bank_law_11 ===
+6. Establishing subsidiary companies, contributing to the incorporation of companies, and 
+partnering with companies that carry out activities related to the nature of its business, 
+in accordance with legal procedures.
+
+=== المادة saudi_central_bank_law_12 ===
+7. Proposing draft laws related to financial institutions and the financial sector, proposing 
+amendments to existing laws, and submitting the same for completion of legal 
+procedures; drafting and proposing draft laws or amendments to existing laws that may 
+impact monetary conditions or the stability of the financial sector shall be made in 
+coordination with the Bank.
+
+=== المادة saudi_central_bank_law_13 ===
+8. Defining the terms and interpreting the provisions of this Law. 
+Article 5 
+The Bank may charge fees for the licenses and approvals it issues, services it provides, and 
+transactions it carries out, as well as fees to cover the cost of supervising financial institutions, 
+in accordance with guidelines approved by the Board. 
+Article 6 
+The Bank may not:
+
+=== المادة saudi_central_bank_law_14 ===
+1. engage in commerce, participate in commercial businesses, or hold an interest in any 
+commercial, industrial, or agricultural project, unless necessary to achieve its objectives;
+
+=== المادة saudi_central_bank_law_15 ===
+2. purchase or own real property, unless necessary for its operations or the diversification of 
+its foreign investments;
+
+=== المادة saudi_central_bank_law_16 ===
+4. finance or extend loans to any natural or legal person; for the purpose of managing liquidity 
+or dealing with crises, financial institutions shall be excluded from this provision pursuant 
+to a decision by the Governor, in accordance with guidelines set by the Board.
+
+=== المادة saudi_central_bank_law_17 ===
+5 
+Article 7 
+The Bank’s assets, revenues, and properties shall have immunity; they may not be searched, 
+blocked, seized, confiscated, or expropriated, and shall not be subject to any bankruptcy 
+procedures.
+
+=== المادة saudi_central_bank_law_18 ===
+1. The Bank shall have a board of directors composed of the following: 
+a) The Governor, Chairman. 
+b) Two Vice Governors, Members. 
+c) Five non-government employees, members. 
+1 bis - If the Governor is unable to chair a Board meeting, he shall assign one of the Vice 
+Governors to chair the meeting.
+
+=== المادة saudi_central_bank_law_19 ===
+2. Nomination of Board members referred to in paragraph 1(c) of this Article shall be made 
+jointly by the Governor and the Minister of Finance; their appointment shall be pursuant 
+to a royal order, and their membership shall be for a renewable term of seven years. If a 
+member’s term expires without his membership being renewed or a replacement being 
+appointed, he shall continue to serve as a Board member.
+
+=== المادة saudi_central_bank_law_20 ===
+3. The remuneration and benefits of Board members shall be determined pursuant to a royal 
+order upon the recommendation of the Minister of Finance in coordination with the 
+Governor. 
+Article 9 
+Any of the Board members referred to in Article 8(1)(c) of this Law shall satisfy the following 
+conditions:
+
+=== المادة saudi_central_bank_law_21 ===
+1. The Board shall supervise the Bank’s activities and shall be generally responsible for 
+ensuring the soundness of its management and functioning, and shall, to this end and in 
+accordance with the Bank’s objectives, have all the necessary powers. The Board may set 
+the rules, regulations, and policies and issue the directives it deems necessary and
+
+=== المادة saudi_central_bank_law_22 ===
+6 
+appropriate for carrying out Bank activities in accordance with this Law; they shall include, 
+but not be limited to, the following: 
+a) Endorsing the Bank’s strategies and operational plans. 
+b) Approving the Bank’s by-laws, as well as its administrative, financial, technical, 
+monitoring, and human resources regulations. 
+c) Approving the Bank’s organizational structure. 
+d) Determining the Bank’s fiscal year. 
+e) Endorsing the Bank’s general budget and closing accounts. 
+f) Endorsing the appointment of one or more of the Bank’s external auditors and 
+determining their fees. 
+g) Establishing Bank branches or offices. 
+h) Reviewing the Bank’s periodic reports.
+
+=== المادة saudi_central_bank_law_23 ===
+2. The Board may, in order to carry out its duties, form standing or interim committees from 
+among its members or others and assign thereto any necessary powers and competences. 
+The committee formation decision shall designate its chairman and members and shall 
+determine its powers and remuneration. The committee may seek the assistance of any 
+person it deems necessary to carry out its duties.
+
+=== المادة saudi_central_bank_law_24 ===
+3. The Board may delegate some of its powers to the Governor who may in turn, according to 
+the guidelines and authority matrix endorsed by the Board, delegate said powers to 
+whomever it deems fit from among Bank staff. 
+Article 11
+
+=== المادة saudi_central_bank_law_25 ===
+1. The Board shall convene every three months upon a call by its Chairman; it may also 
+convene whenever necessary upon a call by its Chairman or at the request of at least three 
+members.
+
+=== المادة saudi_central_bank_law_26 ===
+2. A Board meeting shall only be valid if attended by the majority of its members, provided 
+the Chairman or the assigned Vice Governor is present.
+
+=== المادة saudi_central_bank_law_27 ===
+3. Board decisions shall be passed by majority vote of attending members. In case of a tie, the 
+chairman of the meeting shall have the casting vote. Voting may be carried out 
+electronically.
+
+=== المادة saudi_central_bank_law_28 ===
+4. The Board may invite experts and specialists from among Bank staff or others to attend its 
+meetings in a non-voting capacity to provide advice, data, or clarifications as requested by 
+the Board.
+
+=== المادة saudi_central_bank_law_29 ===
+5. The Board shall appoint a secretary from among Bank staff, and shall determine his duties, 
+remuneration, and term of appointment.
+
+=== المادة saudi_central_bank_law_30 ===
+6. Board decisions and meeting minutes shall be recorded and shall be signed by the 
+chairman of the meeting, attending members, and the secretary. 
+Article 12 
+The Governor shall submit to the King a request to appoint a replacement Board member, in 
+accordance with Article 8(2) of this Law, if a member:
+
+=== المادة saudi_central_bank_law_31 ===
+4. does not attend three consecutive meetings and does not provide an acceptable excuse to 
+the Board or obtain the consent of the Chairman;
+
+=== المادة saudi_central_bank_law_32 ===
+6. grossly breaches any of his duties, as determined by the Board. 
+Article 13: The Governor, Vice-Governors, and Bank Staff 
+The Bank shall have a full-time governor at the rank of Minister; his appointment and benefits 
+shall be determined pursuant to a royal order. The Governor shall manage the Bank’s 
+activities, implement its policies, and carry out its duties. He shall also carry out, in accordance 
+with this Law, any other activities he deems necessary and appropriate, particularly the 
+following:
+
+=== المادة saudi_central_bank_law_33 ===
+5. Carrying out Bank duties and exercising its powers according to the guidelines and authority 
+matrix endorsed by the Board.
+
+=== المادة saudi_central_bank_law_34 ===
+8. Appointing Bank staff, contracting with experts and consultants within the Kingdom or 
+abroad, and determining their benefits, subject to Board endorsement.
+
+=== المادة saudi_central_bank_law_35 ===
+9. Establishing cash centers and appointing agents and correspondents. 
+The Governor may delegate some of his powers to whomever he deems fit from among Bank 
+staff. 
+Article 14
+
+=== المادة saudi_central_bank_law_36 ===
+1. The Governor shall have two full-time Vice Governors to assist him in the discharge of his 
+duties. The Board shall, upon a recommendation by the Governor, issue a decision 
+specifying the powers, functions, and duties of each Vice Governor. The Vice Governors 
+shall not participate in deliberations involving such decision nor vote thereon.
+
+=== المادة saudi_central_bank_law_37 ===
+2. The Vice Governors shall, upon the recommendation of the Governor, be appointed at 
+grade ‘Excellent’; their benefits shall be determined pursuant to a royal order.
+
+=== المادة saudi_central_bank_law_38 ===
+3. The Governor shall, in his absence, assign one of the Vice Governors to serve as acting 
+governor. 
+Article 15 
+Bank staff may not be subject to any liability or claim due to carrying out their duties in 
+accordance with this Law, except in cases of bad faith or gross breach.
+
+=== المادة saudi_central_bank_law_39 ===
+1. A Board member shall disclose any direct or indirect conflict of interest, whether it exists 
+prior to or during the performance of his duties. Said member may not vote on any matter 
+involving a conflict of interest.
+
+=== المادة saudi_central_bank_law_40 ===
+2. Bank staff shall disclose any direct conflict of interest and shall not, in matters involving 
+conflict of interest, be involved in the decision making process or related procedures nor 
+express his opinion thereon.
+
+=== المادة saudi_central_bank_law_41 ===
+Chapter 3: Monetary Policy 
+Article 17 
+The Bank is solely responsible for formulating and implementing the monetary policy, and 
+selecting its operational instruments and procedures.
+
+=== المادة saudi_central_bank_law_42 ===
+1. The Bank’s accounts shall be audited by an external auditor, or more, who must be 
+technically qualified and have expertise in Bank activities. Said auditor shall directly report 
+to the Board and submit his reports thereto.
+
+=== المادة saudi_central_bank_law_43 ===
+2. The external auditor’s duties shall be limited to auditing the Bank’s accounts and financial 
+statements and may not interfere, in any manner, with Bank management or policies.
+
+=== المادة saudi_central_bank_law_44 ===
+3. The external auditor shall have the right to access the Bank’s books, records, and 
+documents, and may request any data he deems necessary to carry out his duties. If the 
+auditor is unable to gain access to such data, he shall report the same to the Board.
+
+=== المادة saudi_central_bank_law_45 ===
+Chapter 5: Relationship with the Government and Foreign Entities 
+Article 19 
+The Bank shall, on behalf of the Government and upon the request of the Minister of Finance 
+or his designee, carry out the following:
+
+=== المادة saudi_central_bank_law_46 ===
+3. Supervise the issuance and payment of letters of credit domestically and internationally. 
+Article 20 
+To achieve its objectives and carry out its duties, as required by the nature of its business, the 
+Bank may:
+
+=== المادة saudi_central_bank_law_47 ===
+2. conclude agreements with other central banks; similar foreign supervisory or oversight 
+entities; or relevant international institutions, organizations, and councils, in accordance 
+with statutory procedures;
+
+=== المادة saudi_central_bank_law_48 ===
+3. cooperate and coordinate with foreign counterparts for the purpose of exchanging 
+information or carrying out supervisory and oversight visits related to financial institutions; 
+and
+
+=== المادة saudi_central_bank_law_49 ===
+4. carry out monetary and financial operations and open accounts with other central banks 
+and local, foreign, regional, and international monetary and financial institutions. 
+ 
+Article 21 
+In its communications with similar foreign oversight and supervisory authorities and relevant 
+international organizations, the Bank shall:
+
+=== المادة saudi_central_bank_law_50 ===
+2. The Bank shall not, in carrying out its activities and procurements, be subject to the 
+provisions of the Government Tenders and Procurement Law, and shall instead be subject 
+to regulations and policies issued by the Board, provided that such regulations and policies 
+are in line with the main objectives and principles of the Government Tenders and 
+Procurement Law.
+
+=== المادة saudi_central_bank_law_51 ===
+3. Bank contracts and agreements shall be subject to policies approved by the Board. 
+However, if the interest of the Bank so dictates, Bank contracts and agreements may 
+stipulate that they be subject to foreign laws, in accordance with policies issued by the 
+Board. In such case, said contracts and agreements may stipulate that they be subject to 
+the jurisdiction of foreign courts or settle disputes through arbitration. 
+Article 23 
+Board members, Bank staff, Bank agents, and external auditors shall not disclose any data or 
+information relating to the affairs of the Bank or financial institutions, whether during or after 
+the term of their employment. 
+Article 24 
+Interfering, in any way, in the Bank’s activities and policies as well as its contracts and 
+agreements, imposing oversight over the Bank, and auditing its accounts shall not be 
+permitted.
+
+=== المادة saudi_central_bank_law_52 ===
+10 
+Article 25 
+The Bank shall submit to the King a report comprising the latest financial and economic 
+developments in the Kingdom and the external auditors’ fiscal year-end report; a copy thereof 
+shall be submitted to the Minister of Finance and shall be published at the appropriate time 
+and in the appropriate manner. 
+Article 26 
+This Law shall supersede the Saudi Arabian Monetary Authority Law, promulgated by Royal 
+Decree No. 23, dated 23/5/1377H, and shall repeal any provision conflicting therewith. 
+Article 27 
+This Law shall enter into force 90 days following the date of its publication in the Official 
+Gazette.

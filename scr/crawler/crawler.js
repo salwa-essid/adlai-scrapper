@@ -42,6 +42,8 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                         const buffer = await downloadPdf(url);
                         const text = await parsePdf(buffer);
                         const articles = extractArticles(text, url);
+                        console.log(`[${label}] PDF LENGTH:`, text.length);
+                        console.log(`[${label}] ARTICLES:`, articles.length);
                         const tagged = articles.map(a => ({
                             ...a,
                             source_doc: label,
@@ -78,6 +80,8 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             console.log("SOURCE:", source.name);
             console.log("FINAL COUNT:", extracted.length);
             if (extracted.length > 0) {
+                console.log("SOURCE:", source.name);
+                console.log("FINAL COUNT:", extracted.length);
                 saveData(source.name, extracted);
                 onProgress(source.name, "success", extracted.length, null);
             } else {

@@ -56,9 +56,12 @@ module.exports = [
     },
     {
         name: "sama",
-        url: "https://rulebook.sama.gov.sa/ar/نظام-مراقبة-البنوك",
-        method: "browser",
-        language: "ar"
+        urls: [
+            "https://www.sama.gov.sa/en-US/Laws/BankingRules/%D9%86%D8%B8%D8%A7%D9%85%20%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9%20%D8%A7%D9%84%D8%A8%D9%86%D9%88%D9%83.pdf",
+            "https://www.sama.gov.sa/en-US/Documents/SCB-EN.pdf"
+        ],
+        docLabels: ["banking_control_law", "saudi_central_bank_law"],
+        method: "multi_pdf"
     },
     {
         name: "cma",
