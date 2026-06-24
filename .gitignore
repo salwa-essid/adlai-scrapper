@@ -1,7 +1,14 @@
-# Node artifact files
+# Dependencies
 node_modules/
 
-# Environment variables
+# Environment
 .env
+.env.*
 
+# IDE
 .idea/
+.vscode/
+
+# Output & logs (generated at runtime)
+output/
+logs/
