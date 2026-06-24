@@ -1,8 +1,17 @@
 module.exports = [
+    // {
+    //     name: "zatca",
+    //     // مصادر متعددة تُجمع في output/zatca واحد
+    //     urls: [
+    //         "https://zatca.gov.sa/en/E-Invoicing/Introduction/LawsAndRegulations/Documents/20230519_E-Invoicing%20Implementation%20Resolution%20English.pdf",
+    //         "https://zatca.gov.sa/en/E-Invoicing/Introduction/Guidelines/Documents/E-Invoicing_Detailed__Guideline.pdf"
+    //     ],
+    //     method: "multi_pdf"
+    // },
     {
         name: "zatca",
-        url: "https://zatca.gov.sa/ar/RulesRegulations/Taxes/Documents/VAT%20Final%2030%20Nov%202016(updated).pdf",
-        method: "pdf"
+        url: "https://zatca.gov.sa/en/E-Invoicing/Introduction/LawsAndRegulations/Pages/default.aspx",
+        method: "browser"
     },
     {
         name: "labor",

@@ -89,6 +89,21 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                     }
                 }
             }
+            else if (source.method === "multi_pdf") {
+                console.log(` Downloading ${source.urls.length} PDFs for ${source.name}...`);
+                for (const url of source.urls) {
+                    try {
+                        console.log(`  -> ${url}`);
+                        const buffer = await downloadPdf(url);
+                        const text = await parsePdf(buffer);
+                        const articles = extractArticles(text, url);
+                        console.log(`  -> found ${articles.length} articles`);
+                        extracted.push(...articles);
+                    } catch (e) {
+                        console.warn(`  x failed: ${url} — ${e.message}`);
+                    }
+                }
+            }
             else if (source.method === "local_pdf") {
                 const fs = require('fs');
                 const buffer = fs.readFileSync(source.url);
