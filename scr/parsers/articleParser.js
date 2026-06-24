@@ -25,7 +25,11 @@ const ARABIC_ORDINALS = [
 function extractArticles(rawText, sourceUrl) {
     const text = rawText?.trim()?.startsWith("<")
         ? cleanHtml(rawText)
-        : (rawText || "").replace(/\s+/g, " ").trim();
+        : (rawText || "")
+            .replace(/\r/g, "")
+            .replace(/[ \t]+/g, " ")
+            .trim();
+    console.log("NEWLINES:", (text.match(/\n/g) || []).length);
 
     if (!text || text.length < 200) return [];
 

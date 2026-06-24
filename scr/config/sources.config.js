@@ -51,10 +51,8 @@ module.exports = [
     },
     {
         name: "pdpl",
-        // sdaia.gov.sa
-        url: "https://sdaia.gov.sa/ar/SDAIA/about/Documents/PersonalData.pdf",
-        method: "pdf",
-        language: "ar"
+        url: "./input/pdpl.pdf",
+        method: "local_pdf"
     },
     {
         name: "sama",

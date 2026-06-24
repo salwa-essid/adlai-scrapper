@@ -29,6 +29,11 @@ async function downloadPdf(url) {
         httpsAgent: agent,
         headers: { "User-Agent": "Mozilla/5.0" }
     });
+
+    console.log("URL:", url);
+    console.log("CONTENT-TYPE:", res.headers["content-type"]);
+    console.log("STATUS:", res.status);
+
     return Buffer.from(res.data);
 }
 

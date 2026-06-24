@@ -7,7 +7,6 @@ const fs = require("fs");
 
 async function runCrawler(sources = [], onProgress = () => {}) {
     const results = [];
-
     for (const source of sources) {
         // handle blocked sources honestly
         if (source.method === "blocked") {
@@ -19,23 +18,22 @@ async function runCrawler(sources = [], onProgress = () => {}) {
         try {
             console.log(`\nProcessing: ${source.name}`);
             let extracted = [];
-
             if (source.method === "pdf") {
                 console.log("  Downloading PDF...");
                 const buffer = await downloadPdf(source.url);
                 const text = await parsePdf(buffer);
+                console.log("SOURCE:", source.name);
+                console.log("TEXT LENGTH:", text.length);
+                console.log(text.slice(0, 1000));
                 extracted = extractArticles(text, source.url);
-
             } else if (source.method === "local_pdf") {
                 const buffer = fs.readFileSync(source.url);
                 const text = await parsePdf(buffer);
                 extracted = extractArticles(text, source.url);
-
             } else if (source.method === "multi_pdf") {
-                // A1: merge multiple PDFs under one source, tag each article with its doc
+                //merge multiple PDFs under one source, tag each article with its doc
                 const labels = source.docLabels || source.urls.map((_, i) => `doc_${i + 1}`);
                 let globalIndex = 1;
-
                 for (let i = 0; i < source.urls.length; i++) {
                     const url = source.urls[i];
                     const label = labels[i];
@@ -65,7 +63,7 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                 console.log("  Launching browser...");
                 const browser = await chromium.launch({ headless: true });
                 const page = await browser.newPage();
-                await page.goto(source.url, { waitUntil: "networkidle", timeout: 60000 });
+                await page.goto(source.url, { waitUntil: "", timeout: 60000 });
                 await page.waitForTimeout(3000);
                 const text = await page.evaluate(() => document.body.innerText);
                 await browser.close();
@@ -77,6 +75,8 @@ async function runCrawler(sources = [], onProgress = () => {}) {
 
             console.log(`  articles found: ${extracted.length}`);
 
+            console.log("SOURCE:", source.name);
+            console.log("FINAL COUNT:", extracted.length);
             if (extracted.length > 0) {
                 saveData(source.name, extracted);
                 onProgress(source.name, "success", extracted.length, null);
