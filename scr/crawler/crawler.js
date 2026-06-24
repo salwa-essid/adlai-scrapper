@@ -9,7 +9,7 @@ async function runCrawler(sources = [], onProgress = () => {}) {
     const results = [];
 
     for (const source of sources) {
-        // A4: handle blocked sources honestly
+        // handle blocked sources honestly
         if (source.method === "blocked") {
             console.log(`BLOCKED: ${source.name} — ${source.blockedReason}`);
             onProgress(source.name, "blocked", 0, source.blockedReason);

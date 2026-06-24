@@ -33,7 +33,8 @@ function extractArticles(rawText, sourceUrl) {
     // Must be at word boundary, NOT preceded by prepositions (of, من, في, بموجب...)
     // Requires a colon, newline, or double-space after the number (not mid-sentence)
     const articlePattern =
-        /(?:^|\n)\s*((?:المادة|Article)\s+(?:\d+|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|العاشرة)(?:\s*[-–:]\s*[A-Z\u0600-\u06FF]|\s*\n|\s{3,}))/gim;
+        /(?<![a-zA-Z\u0600-\u06FF\d،,])(المادة\s+(?:\d+|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|الثامنة|التاسعة|العاشرة)(?:\s*[-–:]|\s{2,}|\s*\n))/gim;
+
     // Pattern 2: Arabic ordinals used in Resolution (أولاً: ثانياً: ...)
     const ordinalPattern = new RegExp(
         `(?<![\\u0600-\\u06FF])(${ARABIC_ORDINALS.join("|")})\\s*[:\\-]`,
