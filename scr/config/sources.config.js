@@ -61,8 +61,13 @@ module.exports = [
     },
     {
         name: "nca",
-        url: "",
-        method: "blocked"
+        // directly pdfs  nca.gov.sa — ECC و CCC
+        urls: [
+            "https://nca.gov.sa/ecc-en.pdf",
+            "https://nca.gov.sa/ccc-en.pdf"
+        ],
+        docLabels: ["ecc", "ccc"],
+        method: "multi_pdf"
     },
     {
         name: "misa",
