@@ -129,7 +129,8 @@ minimum cybersecurity requirements for national organizations that are within it
 implementation. This document highlights the details of these controls, goals, scope, statement of 
 applicability, compliance approach and monitoring. 
 All national organizations must implement all necessary measures to ensure continuous compliance 
-with the ECC as per item 3 of article 10 of NCA’s mandate and as per the Royal Decree number 57231, 
+with the ECC as per item 3 of 
+article 10 of NCA’s mandate and as per the Royal Decree number 57231, 
 dated 10/11/1439H.
 
 === المادة ecc_5 ===
@@ -206,7 +207,8 @@ Document Classification: Unclassified
 Implementation and Compliance
 Update and Review
 Assessment and Compliance Tool
-To comply with item 3 of article 10 of NCA’s mandate and as per the Royal Decree number 57231 
+To comply with item 3 of 
+article 10 of NCA’s mandate and as per the Royal Decree number 57231 
 dated 10/11/1439H, all organizations within the scope of these controls must implement whatever 
 necessary to ensure continuous compliance with the controls. 
 NCA evaluates organizations’ compliance with the ECC through multiple means such as self-as-
@@ -1550,7 +1552,8 @@ cybersecurity risks of Cloud Service Providers (CSPs), and Cloud Customers, also
 Service Tenants (CSTs). This document highlights the details of the cloud cybersecurity controls for 
 cloud services, objectives, scope, statement of applicability, compliance approach and monitoring.
 All CSPs and CSTs shall implement all necessary measures to ensure continuous compliance with 
-the CCC as per Paragraph III of Article 10 of NCA’s mandate and as per the Royal Decree number 
+the CCC as per Paragraph III of 
+Article 10 of NCA’s mandate and as per the Royal Decree number 
 57231, dated 10/11/1439AH.
 
 === المادة ccc_6 ===
@@ -1621,7 +1624,8 @@ of CSPs and CSTs, and every CSP and CST must comply with all applicable controls
 
 === المادة ccc_10 ===
 5. Implementation and Compliance
- To comply with item 3 of article 10 of NCA’s mandate and as per the Royal Decree number 57231, 
+ To comply with item 3 of 
+article 10 of NCA’s mandate and as per the Royal Decree number 57231, 
 all CSPs and CSTs within the scope of these controls must implement whatever necessary to ensure 
 continuous compliance with the CCC according to the levels shown in Table (2) and Table (3) in 
 section “Annex No. (A): Cloud Cybersecurity Controls Levels” in this document, taking into account 

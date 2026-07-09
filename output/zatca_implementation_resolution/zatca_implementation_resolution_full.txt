@@ -731,7 +731,8 @@ waves
 
 === المادة en_69 ===
 1.1 Invoice Type Description 
-Tax Invoice as per article 53(5) of VAT Implementing 
+Tax Invoice as per 
+article 53(5) of VAT Implementing 
 Regulation 
 Enumerated value Document title is 
 Tax Invoice 
@@ -779,7 +780,8 @@ Not Required Conditional X
 
 === المادة en_74 ===
 2.1 Invoice Reference Number (IRN): A unique, sequential 
-note number, issued by taxpayer, as per Article 
+note number, issued by taxpayer, as per 
+Article 
 53(5)(b) of the VAT Implementing Regulation. 
 N/A Required Mandatory X
 
@@ -813,7 +815,8 @@ any discrepancy between both versions the Arabic version prevails
 3 Date
 
 === المادة en_79 ===
-3.1 Invoice issue date as per Article 53(5)(a) of the VAT 
+3.1 Invoice issue date as per 
+Article 53(5)(a) of the VAT 
 Implementing Regulation 
 The format needs to be 
 YYYY-MM-DD 
@@ -821,7 +824,8 @@ Required Mandatory X
 
 === المادة en_80 ===
 3.3 Supply date. The supply date needs to be present, if it 
-is different from the invoice issue date, as per Article 
+is different from the invoice issue date, as per 
+Article 
 53(5)(g) of the VAT Implementing Regulation 
 The format needs to be YYYY-
 MM-DD 
@@ -829,7 +833,8 @@ Required Conditional X
 4 Seller Identification
 
 === المادة en_81 ===
-4.3 VAT registration numbers as per Article 53(5)(c) of the 
+4.3 VAT registration numbers as per 
+Article 53(5)(c) of the 
 VAT Implementing Regulation and in case the seller is 
 part of a VAT group then the VAT group Registration 
 number should be entered 
@@ -890,7 +895,8 @@ any discrepancy between both versions the Arabic version prevails
 
 === المادة en_89 ===
 7.6 Discount or rebate amount, if discount is provided at 
-line item level as per Article 53(5)(h) of the VAT 
+line item level as per 
+Article 53(5)(h) of the VAT 
 Implementing Regulation 
 To be filled if the discount is 
 provided at line item levels 
@@ -898,7 +904,8 @@ provided at line item levels
 Required Conditional X
 
 === المادة en_90 ===
-7.8 VAT rate as per Article 53(5)(i) of the VAT 
+7.8 VAT rate as per 
+Article 53(5)(i) of the VAT 
 Implementing Regulation 
 It is mandatory if the goods 
 / service is not Out Of Scope 
@@ -948,7 +955,8 @@ Not required Conditional X
 
 === المادة en_96 ===
 8.2 Discount or rebate amount, if discount is provided at 
-invoice level as per Article 53(5)(h) of the VAT 
+invoice level as per 
+Article 53(5)(h) of the VAT 
 Implementing Regulation 
 To be filled if discount is 
 provided at invoice level 
@@ -961,9 +969,10 @@ any discrepancy between both versions the Arabic version prevails
 23
 
 === المادة en_98 ===
-8.3 Invoice Taxable Amount per rate or exemption as per 
-Article 53(5)(h) of the VAT Implementing Regulation 
-N/A Required Mandatory X
+8.4 VAT Total as per 
+Article 53(5)(j) of the VAT 
+Implementing Regulation 
+VAT Total must be in SAR Required Mandatory X
 
 === المادة en_99 ===
 8.6 
@@ -1021,7 +1030,8 @@ N/A Not required Optional X
 === المادة en_105 ===
 1.1 Where Tax is not charged at the standard rate, this 
 field should have a narration “Tax treatment applied to 
-the supply” as per Article 53(5)(k) of the VAT 
+the supply” as per 
+Article 53(5)(k) of the VAT 
 Implementing Regulation 
 Narration to be entered if 
 Tax is not charged at basic 
@@ -1070,7 +1080,8 @@ tion waves
 
 === المادة en_107 ===
 1.1 Invoice Type Description 
-Simplified Tax Invoice as per article 53(8) of VAT 
+Simplified Tax Invoice as per 
+article 53(8) of VAT 
 Implementing Regulation 
 Enumerated value Document title is 
 Simplified Tax Invoice 
@@ -1099,7 +1110,8 @@ any discrepancy between both versions the Arabic version prevails
 
 === المادة en_111 ===
 2.1 Invoice Reference Number (IRN): A unique, sequential note 
-number, issued by taxpayer, as per Article 53(5)(b) of the VAT 
+number, issued by taxpayer, as per 
+Article 53(5)(b) of the VAT 
 Implementing Regulation. 
 N/A Required Mandatory X
 
@@ -1126,7 +1138,8 @@ fields as mentioned in Annex
 Required Mandatory X
 
 === المادة en_115 ===
-3.1 Invoice issue date as per Article 53(8)(a) of the VAT 
+3.1 Invoice issue date as per 
+Article 53(8)(a) of the VAT 
 Implementing Regulation 
 The format needs to be 
 YYYY-MM-DD 
@@ -1135,7 +1148,8 @@ Required Mandatory X
 === المادة en_116 ===
 3.3 
 Supply date. The supply date needs to be present, if it is 
-different from the invoice issue date, as per Article 53(7)(c 
+different from the invoice issue date, as per 
+Article 53(7)(c 
 and d) of the VAT Implementing Regulation 
 The format needs to be 
 YYYY-MM-DD 
@@ -1150,7 +1164,8 @@ any discrepancy between both versions the Arabic version prevails
 27
 
 === المادة en_118 ===
-4.3 VAT registration number as per Article 53(8)(b) of the VAT 
+4.3 VAT registration number as per 
+Article 53(8)(b) of the VAT 
 Implementing Regulation and in case the seller is part of a 
 VAT group then the VAT group Registration number should 
 be entered 
@@ -1175,7 +1190,8 @@ any discrepancy between both versions the Arabic version prevails
 === المادة en_121 ===
 5.1 Name Name is mandatory to be 
 filled as per the transactions 
-mentioned in article 53 (7) 
+mentioned in 
+article 53 (7) 
 and for private education 
 and private healthcare to 
 citizens 
@@ -1203,7 +1219,8 @@ any discrepancy between both versions the Arabic version prevails
 29
 
 === المادة en_124 ===
-7.11 Subtotal (inclusive of VAT) as per Article 53(8)(d) of the VAT 
+7.11 Subtotal (inclusive of VAT) as per 
+Article 53(8)(d) of the VAT 
 Implementing Regulation with a statement saying “inclusive 
 of VAT” 
 N/A Required Mandatory X
@@ -1249,7 +1266,8 @@ any discrepancy between both versions the Arabic version prevails
 30
 
 === المادة en_130 ===
-8.5 Invoice Gross Total (inclusive of VAT) as per Article 53(8)(d) of 
+8.5 Invoice Gross Total (inclusive of VAT) as per 
+Article 53(8)(d) of 
 the VAT Implementing Regulation 
 If VAT total is not entered, Gross Total to be entered 
 Statement - "Amount includes VAT" 
@@ -1303,7 +1321,8 @@ N/A Not required Optional X
 === المادة en_135 ===
 1.1 Where Tax is not charged at the standard rate, this field 
 should have a narration “Tax treatment applied to the 
-supply” as per Article 53 of the VAT Implementing 
+supply” as per 
+Article 53 of the VAT Implementing 
 Regulation 
 Narration to be entered if 
 Tax is not charged at basic 
@@ -1347,7 +1366,8 @@ implementation waves
 
 === المادة en_137 ===
 1.1 Invoice Type Description 
-Credit Note or Debit Note as per article 54 of VAT 
+Credit Note or Debit Note as per 
+article 54 of VAT 
 Implementing Regulation 
 Enumerated value 
 representing Credit 
@@ -1360,7 +1380,8 @@ Mandatory X
 2 Invoice Identifiers (No change to
 
 === المادة en_138 ===
-3.1 Note issue date as per Article 54(3) of the VAT 
+3.1 Note issue date as per 
+Article 54(3) of the VAT 
 Implementing Regulation 
 The date format should 
 be YYYY-MM-DD 
@@ -1412,7 +1433,8 @@ tion waves
 
 === المادة en_141 ===
 1.1 Invoice Type Description 
-Credit Note or Debit Note as per article 54 of VAT 
+Credit Note or Debit Note as per 
+article 54 of VAT 
 Implementing Regulation 
 Enumerated value 
 representing Credit Note or 
@@ -1424,7 +1446,8 @@ Mandatory X
 2 Invoice Identifiers (No change to
 
 === المادة en_142 ===
-3.1 Note issue date as per Article 54(3) of the VAT Implementing 
+3.1 Note issue date as per 
+Article 54(3) of the VAT Implementing 
 Regulation 
 The date format should be 
 YYYY-MM-DD 

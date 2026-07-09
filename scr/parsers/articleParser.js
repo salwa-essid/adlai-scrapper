@@ -26,8 +26,10 @@ function extractArticles(rawText, sourceUrl) {
     const text = rawText?.trim()?.startsWith("<")
         ? cleanHtml(rawText)
         : (rawText || "")
-            .replace(/\r/g, "")
-            .replace(/[ \t]+/g, " ")
+            .replace(/\r/g, "\n")          // normalize CR
+            .replace(/[ \t]+/g, " ")       // collapse spaces
+            .replace(/(Article\s+\d+)/gi, "\n$1")
+            .replace(/(المادة\s+)/g, "\n$1")
             .trim();
     console.log("NEWLINES:", (text.match(/\n/g) || []).length);
 
