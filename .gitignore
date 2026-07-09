@@ -10,5 +10,4 @@ node_modules/
 .vscode/
 
 # Output & logs (generated at runtime)
-output/
 logs/
