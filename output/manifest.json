@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T08:23:40.299Z",
+  "generated_at": "2026-08-05T10:00:57.013Z",
   "sources": [
     {
       "name": "zatca_einvoicing_regulation",
@@ -7,23 +7,23 @@
       "article_count": 7,
       "language": "ar,en",
       "source_url": "https://zatca.gov.sa/ar/E-Invoicing/Introduction/LawsAndRegulations/Documents/E-invoicing-Regulations.pdf",
-      "fetched_at": "2026-07-09T08:23:22.086Z"
+      "fetched_at": "2026-08-05T10:00:39.434Z"
     },
     {
       "name": "zatca_implementation_resolution",
       "status": "success",
-      "article_count": 146,
+      "article_count": 101,
       "language": "ar,en",
       "source_url": "https://zatca.gov.sa/ar/E-Invoicing/Introduction/LawsAndRegulations/Documents/20230519_E-Invoicing%20Resolution.pdf",
-      "fetched_at": "2026-07-09T08:23:23.779Z"
+      "fetched_at": "2026-08-05T10:00:41.758Z"
     },
     {
       "name": "zatca_guidelines",
       "status": "success",
-      "article_count": 97,
+      "article_count": 99,
       "language": "ar,en",
       "source_url": "https://zatca.gov.sa/ar/E-Invoicing/Introduction/Guidelines/Documents/E-Invoicing-Detailed-Guidelines.pdf",
-      "fetched_at": "2026-07-09T08:23:25.995Z"
+      "fetched_at": "2026-08-05T10:00:45.114Z"
     },
     {
       "name": "zatca_vat_agreement",
@@ -31,63 +31,63 @@
       "article_count": 134,
       "language": "ar,en",
       "source_url": "https://zatca.gov.sa/ar/RulesRegulations/Taxes/Documents/VAT%20Final%2030%20Nov%202016(updated).pdf",
-      "fetched_at": "2026-07-09T08:23:27.361Z"
+      "fetched_at": "2026-08-05T10:00:47.046Z"
     },
     {
       "name": "labor",
       "status": "success",
-      "article_count": 295,
+      "article_count": 64,
       "language": "ar",
-      "source_url": "https://www.hrsd.gov.sa/sites/default/files/2023-02/Labor.pdf",
-      "fetched_at": "2026-07-09T08:23:28.014Z"
+      "source_url": "https://www.hrsd.gov.sa/sites/default/files/2025-02/%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D9%84.pdf",
+      "fetched_at": "2026-08-05T10:00:49.142Z"
     },
     {
       "name": "companies",
       "status": "success",
-      "article_count": 42,
+      "article_count": 99,
       "language": "ar",
       "source_url": "https://qadha.org.sa/files/3/%D9%83%D8%AA%D8%A8%20%D9%82%D8%B6%D8%A7%D8%A1/%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20%D9%88%D9%84%D9%88%D8%A7%D8%A6%D8%AD%D9%87%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9.pdf",
-      "fetched_at": "2026-07-09T08:23:30.614Z"
+      "fetched_at": "2026-08-05T10:00:52.775Z"
     },
     {
       "name": "pdpl",
       "status": "success",
-      "article_count": 49,
+      "article_count": 16,
       "language": "unknown",
       "source_url": "./input/pdpl.pdf",
-      "fetched_at": "2026-07-09T08:23:30.715Z"
+      "fetched_at": "2026-08-05T10:00:52.962Z"
     },
     {
       "name": "sama",
       "status": "success",
-      "article_count": 58,
-      "language": "unknown",
-      "source_url": "https://www.sama.gov.sa/en-US/Laws/BankingRules/%D9%86%D8%B8%D8%A7%D9%85%20%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9%20%D8%A7%D9%84%D8%A8%D9%86%D9%88%D9%83.pdf",
-      "fetched_at": "2026-07-09T08:23:36.211Z"
+      "article_count": 24,
+      "language": "ar",
+      "source_url": "./input/sama_banking.pdf",
+      "fetched_at": "2026-08-05T10:00:53.111Z"
     },
     {
       "name": "cma",
       "status": "success",
-      "article_count": 51,
-      "language": "en",
-      "source_url": "https://cma.gov.sa/en/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
-      "fetched_at": "2026-07-09T08:23:37.753Z"
+      "article_count": 66,
+      "language": "ar",
+      "source_url": "https://cma.gov.sa/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
+      "fetched_at": "2026-08-05T10:00:54.116Z"
     },
     {
       "name": "nca",
       "status": "success",
       "article_count": 87,
-      "language": "en",
-      "source_url": "https://nca.gov.sa/ecc-en.pdf",
-      "fetched_at": "2026-07-09T08:23:39.646Z"
+      "language": "ar",
+      "source_url": "https://nca.gov.sa/ecc-ar.pdf",
+      "fetched_at": "2026-08-05T10:00:56.341Z"
     },
     {
       "name": "misa",
       "status": "success",
-      "article_count": 30,
-      "language": "en",
-      "source_url": "https://misa.gov.sa/app/uploads/2025/07/Investment-Law.pdf",
-      "fetched_at": "2026-07-09T08:23:40.299Z"
+      "article_count": 12,
+      "language": "ar,en",
+      "source_url": "https://misa.gov.sa/app/uploads/2024/08/Investment-Law.pdf",
+      "fetched_at": "2026-08-05T10:00:57.012Z"
     }
   ]
 }
