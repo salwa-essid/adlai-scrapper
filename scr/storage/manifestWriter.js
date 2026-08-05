@@ -7,7 +7,6 @@ function writeManifest(statusMap, sourcesConfig = []) {
 
     const entries = Object.entries(statusMap).map(([name, info]) => {
         const source = sourcesConfig.find(s => s.name === name);
-
         return {
         name,
         status: info.status,           // success | failed | blocked
@@ -15,14 +14,11 @@ function writeManifest(statusMap, sourcesConfig = []) {
         language: source?.language || "unknown",
           source_url: source?.url || source?.urls?.[0] || null,
         fetched_at: info.lastUpdated || null
-
     }});
-
     const manifest = {
         generated_at: new Date().toISOString(),
         sources: entries
     };
-
     const manifestPath = path.join(outputDir, "manifest.json");
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), "utf-8");
     console.log(`\nmanifest written → output/manifest.json`);

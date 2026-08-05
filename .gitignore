@@ -7,7 +7,9 @@ node_modules/
 
 # IDE
 .idea/
+
 .vscode/
 
 # Output & logs (generated at runtime)
 logs/
+

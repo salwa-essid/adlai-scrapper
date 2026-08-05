@@ -39,9 +39,19 @@ module.exports = [
     },
     {
         name: "labor",
-        url: "https://www.hrsd.gov.sa/sites/default/files/2023-02/Labor.pdf",
+        // Was pointing at the 2023-02 English translation despite
+        // language: "ar" already being set here — verified by hand that
+        // 100% of the ingested articles came back English. This is the
+        // Arabic original (newer revision too: 2025-02 vs 2023-02).
+        url: "https://www.hrsd.gov.sa/sites/default/files/2025-02/%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D9%84.pdf",
         method: "pdf",
-        language: "ar"
+        language: "ar",
+        // Confirmed 2026-08-03 via raw-dump diagnostic (dump-raw-labor-pdpl.js):
+        // this PDF's text is uniformly mirror-reversed line by line, same
+        // corruption pattern as SAMA's original PDF. Verified against the
+        // recurring header phrase: raw "ماظن لمعل ا" reverses correctly to
+        // "نظام العمل". reverseText fixes it the same way as SAMA.
+        reverseText: true
     },
     {
         name: "companies",
@@ -56,34 +66,53 @@ module.exports = [
     },
     {
         name: "sama",
-        urls: [
-            "https://www.sama.gov.sa/en-US/Laws/BankingRules/%D9%86%D8%B8%D8%A7%D9%85%20%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9%20%D8%A7%D9%84%D8%A8%D9%86%D9%88%D9%83.pdf",
-            "https://www.sama.gov.sa/en-US/Documents/SCB-EN.pdf"
-        ],
-        docLabels: ["banking_control_law", "saudi_central_bank_law"],
-        method: "multi_pdf"
+        // Both old sama.gov.sa URLs are dead (one now serves a totally
+        // different law's text, the other returns an HTML error page,
+        // not a PDF — confirmed 2026-08-03, the site was restructured).
+        // SAMA now publishes law text per-article on rulebook.sama.gov.sa,
+        // which disallows scraping (robots.txt). Interim fix: manually
+        // downloaded PDF, same pattern as pdpl below. Drop this file at
+        // input/sama_banking.pdf before running the crawler.
+        url: "./input/sama_banking.pdf",
+        method: "local_pdf",
+        language: "ar"
     },
     {
         name: "cma",
-        url: "https://cma.gov.sa/en/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
+        // language: "en" was set on purpose here, but that's the gap —
+        // this repo needs the Arabic original, not a translation. Same
+        // URL with "/en/" removed (verified against cma.gov.sa's own
+        // Arabic law page).
+        url: "https://cma.gov.sa/RulesRegulations/CMALaw/Documents/CMA_Law.pdf",
         method: "pdf",
-        language: "en"
+        language: "ar"
     },
     {
         name: "nca",
-        // directly pdfs  nca.gov.sa — ECC و CCC
+        // Both URLs were the "-en" variant on purpose (language: "en").
+        // nca.gov.sa serves the Arabic originals at the same path with
+        // "-ar" instead of "-en" — verified both by hand (ECC and CCC
+        // controls, correctly in Arabic).
         urls: [
-            "https://nca.gov.sa/ecc-en.pdf",
-            "https://nca.gov.sa/ccc-en.pdf"
+            "https://nca.gov.sa/ecc-ar.pdf",
+            "https://nca.gov.sa/ccc-ar.pdf"
         ],
         docLabels: ["ecc", "ccc"],
         method: "multi_pdf",
-        language: "en"
+        language: "ar"
     },
     {
         name: "misa",
-        url: "https://misa.gov.sa/app/uploads/2025/07/Investment-Law.pdf",
+        // The 2025/07 URL was English-only. Found a newer (2024/1446H),
+        // bilingual PDF instead — Arabic text first, English translation
+        // after, per article (verified 2026-08-03). Not a clean ar/en
+        // split like zatca's multi_pdf sources, so each extracted
+        // article's text will likely contain both languages run
+        // together — better than 100% English, but flag for a spot
+        // check once ingested (extractArticles wasn't written with
+        // bilingual-single-PDF sources in mind).
+        url: "https://misa.gov.sa/app/uploads/2024/08/Investment-Law.pdf",
         method: "pdf",
-        language: "en"
+        language: "ar,en"
     }
 ];

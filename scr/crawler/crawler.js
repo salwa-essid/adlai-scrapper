@@ -21,14 +21,14 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             if (source.method === "pdf") {
                 console.log("  Downloading PDF...");
                 const buffer = await downloadPdf(source.url);
-                const text = await parsePdf(buffer);
+                const text = await parsePdf(buffer, { reverseText: !!source.reverseText });
                 console.log("SOURCE:", source.name);
                 console.log("TEXT LENGTH:", text.length);
                 console.log(text.slice(0, 1000));
                 extracted = extractArticles(text, source.url);
             } else if (source.method === "local_pdf") {
                 const buffer = fs.readFileSync(source.url);
-                const text = await parsePdf(buffer);
+                const text = await parsePdf(buffer, { reverseText: !!source.reverseText });
                 extracted = extractArticles(text, source.url);
             } else if (source.method === "multi_pdf") {
                 //merge multiple PDFs under one source, tag each article with its doc
@@ -37,10 +37,18 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                 for (let i = 0; i < source.urls.length; i++) {
                     const url = source.urls[i];
                     const label = labels[i];
+                    // reverseText can be a single bool (applies to every URL
+                    // in this source) or an array parallel to urls/docLabels
+                    // for sources where only some docs need it (e.g. SAMA:
+                    // only the new Central Bank Law PDF is reversed, the
+                    // Banking Control Law one isn't).
+                    const reverseText = Array.isArray(source.reverseText)
+                        ? !!source.reverseText[i]
+                        : !!source.reverseText;
                     try {
                         console.log(`  -> [${label}] ${url}`);
                         const buffer = await downloadPdf(url);
-                        const text = await parsePdf(buffer);
+                        const text = await parsePdf(buffer, { reverseText });
                         const articles = extractArticles(text, url);
                         console.log(`[${label}] PDF LENGTH:`, text.length);
                         console.log(`[${label}] ARTICLES:`, articles.length);
