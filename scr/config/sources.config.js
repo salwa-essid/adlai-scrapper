@@ -62,20 +62,53 @@ module.exports = [
     {
         name: "pdpl",
         url: "./input/pdpl.pdf",
-        method: "local_pdf"
+        method: "local_pdf",
+        language: "ar",
+        reverseText: true,
+        // MANUAL OVERRIDE 2026-08-18: this PDF's text layer is not
+        // uniformly mirrored like labor/sama's — confirmed by running
+        // parsePdf() directly against input/pdpl.pdf: some lines are
+        // fully reversed, some are already correct, and some individual
+        // tokens (esp. punctuation placement) are reversed independently
+        // of the rest of their line. A per-line "reverse if it scores
+        // more readable" heuristic was tried and still leaves word order
+        // wrong on header lines like "المادة الأولى". Rather than ship a
+        // fragile regex fix for one PDF, output/pdpl/ is populated from
+        // the already hand-verified 43-article extraction (same source
+        // PDF, sdaia.gov.sa) done for the adlai-corpus-ingestion repo.
+        // manualOverride tells the crawler to skip re-parsing this
+        // source and keep the existing output/pdpl/ files as-is — a real
+        // parser fix should replace this once someone has time to
+        // reverse-engineer the mixed-direction text properly.
+        manualOverride: true
     },
     {
         name: "sama",
-        // Both old sama.gov.sa URLs are dead (one now serves a totally
-        // different law's text, the other returns an HTML error page,
-        // not a PDF — confirmed 2026-08-03, the site was restructured).
-        // SAMA now publishes law text per-article on rulebook.sama.gov.sa,
-        // which disallows scraping (robots.txt). Interim fix: manually
-        // downloaded PDF, same pattern as pdpl below. Drop this file at
-        // input/sama_banking.pdf before running the crawler.
-        url: "./input/sama_banking.pdf",
-        method: "local_pdf",
-        language: "ar"
+        // Both old sama.gov.sa URLs were dead (one served a totally
+        // different law's text, the other an HTML error page, not a PDF —
+        // confirmed 2026-08-03). rulebook.sama.gov.sa (the newer portal)
+        // disallows scraping via robots.txt. Found 2026-08-04: SAMA still
+        // hosts the actual founding law as a plain static PDF at a
+        // completely different, non-portal path —
+        // https://www.sama.gov.sa/ar-sa/Documents/SCB_ar.pdf — "نظام
+        // البنك المركزي السعودي" (Saudi Central Bank Law, Royal Decree
+        // M/36, 1442H). Confirmed reachable and readable (Article 1:
+        // definitions of "Bank"/"Regulation"/"Council"/"Governor" etc.),
+        // and it's a genuine multi-article statute, not a stub page — a
+        // good, direct replacement for the old dead links. Switched back
+        // from local_pdf to the normal automated "pdf" method since
+        // nothing here needs a manual download anymore.
+        //
+        // Confirmed 2026-08-11 via /run + output/sama.json: same
+        // mirror-reversal corruption as labor/pdpl (raw "م اظن كن ب ل ا
+        // يز ك ر م ل ا يدوعسل ا" reverses correctly to "نظام البنك
+        // المركزي السعودي"). 11 real, well-structured articles
+        // (definitions, governance, monetary policy, closing provisions)
+        // once reversed.
+        url: "https://www.sama.gov.sa/ar-sa/Documents/SCB_ar.pdf",
+        method: "pdf",
+        language: "ar",
+        reverseText: true
     },
     {
         name: "cma",

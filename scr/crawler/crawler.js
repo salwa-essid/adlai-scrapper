@@ -2,7 +2,9 @@ const { downloadPdf, fetchPage } = require("../parsers/fetcher");
 const { parsePdf } = require("../parsers/pdfParser");
 const { extractArticles } = require("../parsers/articleParser");
 const { saveData } = require("../storage/fileWriter");
+const { isGoodContent } = require("../utils/filters");
 const { chromium } = require("playwright");
+const path = require("path");
 const fs = require("fs");
 
 async function runCrawler(sources = [], onProgress = () => {}) {
@@ -12,6 +14,25 @@ async function runCrawler(sources = [], onProgress = () => {}) {
         if (source.method === "blocked") {
             console.log(`BLOCKED: ${source.name} — ${source.blockedReason}`);
             onProgress(source.name, "blocked", 0, source.blockedReason);
+            continue;
+        }
+
+        // MANUAL OVERRIDE (2026-08-18): some sources have a hand-verified
+        // output that the automated parser can't reliably reproduce (see
+        // sources.config.js comment on pdpl). Skip re-parsing and just
+        // report the existing output as-is, so a routine re-run doesn't
+        // silently clobber a manually-fixed source with a broken one.
+        if (source.manualOverride) {
+            try {
+                const existingPath = path.join(__dirname, "../../output", source.name, `${source.name}_articles.json`);
+                const existing = JSON.parse(fs.readFileSync(existingPath, "utf-8"));
+                console.log(`SKIPPED (manualOverride): ${source.name} — keeping ${existing.length} existing articles`);
+                onProgress(source.name, "success", existing.length, null);
+                results.push(...existing);
+            } catch (e) {
+                console.warn(`  manualOverride source ${source.name} has no existing output: ${e.message}`);
+                onProgress(source.name, "failed", 0, `manualOverride set but no existing output/${source.name}/ found`);
+            }
             continue;
         }
 
@@ -87,11 +108,26 @@ async function runCrawler(sources = [], onProgress = () => {}) {
 
             console.log("SOURCE:", source.name);
             console.log("FINAL COUNT:", extracted.length);
-            if (extracted.length > 0) {
+
+            // Sanity check (Alex, adlai-scrapper review 2026-08-18): a
+            // fetch that grabbed the site's landing page / nav / footer
+            // instead of the real document still produces "articles" —
+            // just garbage ones. Refuse to mark success if the FIRST
+            // extracted article reads like website chrome rather than
+            // real legal text; this is deliberately checked on article
+            // [0] only (per the request), not every article, since a
+            // false positive mid-document is much less likely/costly
+            // than never noticing a bad fetch at all.
+            const firstLooksReal = extracted.length === 0 || isGoodContent(extracted[0].text);
+
+            if (extracted.length > 0 && firstLooksReal) {
                 console.log("SOURCE:", source.name);
                 console.log("FINAL COUNT:", extracted.length);
                 saveData(source.name, extracted);
                 onProgress(source.name, "success", extracted.length, null);
+            } else if (!firstLooksReal) {
+                console.warn(`  x rejected ${source.name}: first article looks like boilerplate/website chrome, not real content`);
+                onProgress(source.name, "failed", 0, "First extracted article looks like website boilerplate, not document content");
             } else {
                 onProgress(source.name, "failed", 0, "No articles extracted");
             }
