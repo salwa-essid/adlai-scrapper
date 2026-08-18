@@ -107,27 +107,40 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             console.log(`  articles found: ${extracted.length}`);
 
             console.log("SOURCE:", source.name);
-            console.log("FINAL COUNT:", extracted.length);
+            console.log("FINAL COUNT (before sanity check):", extracted.length);
 
-            // Sanity check (Alex, adlai-scrapper review 2026-08-18): a
-            // fetch that grabbed the site's landing page / nav / footer
-            // instead of the real document still produces "articles" —
-            // just garbage ones. Refuse to mark success if the FIRST
-            // extracted article reads like website chrome rather than
-            // real legal text; this is deliberately checked on article
-            // [0] only (per the request), not every article, since a
-            // false positive mid-document is much less likely/costly
-            // than never noticing a bad fetch at all.
-            const firstLooksReal = extracted.length === 0 || isGoodContent(extracted[0].text);
+            // Sanity check (Alex, adlai-scrapper review 2026-08-18; refined
+            // same day after it false-positived on nca/sama/zatca_guidelines).
+            //
+            // First version checked extracted[0] only and failed the WHOLE
+            // source if it looked like boilerplate. That broke on PDFs whose
+            // article splitter has no numbered heading to anchor on before
+            // the real content starts — the cover page / classification
+            // banner (nca) or table-of-contents (sama, zatca_guidelines) gets
+            // mis-split as "article 1", even though real articles follow it
+            // right after. Failing the whole source there throws away good
+            // data over a labeling artifact.
+            //
+            // Fixed version: drop any *leading* entries that don't look like
+            // real content (cover page / TOC noise), keep everything from
+            // the first real-looking entry onward. Only fail the source if
+            // NOTHING in it looks real — that's the actual "we scraped a
+            // dead page, not the document" case Alex's check was meant to
+            // catch.
+            const firstGoodIndex = extracted.findIndex(a => isGoodContent(a.text));
 
-            if (extracted.length > 0 && firstLooksReal) {
+            if (extracted.length > 0 && firstGoodIndex === -1) {
+                console.warn(`  x rejected ${source.name}: no extracted entry looks like real content (likely boilerplate/website chrome)`);
+                onProgress(source.name, "failed", 0, "No extracted article looks like real document content (likely boilerplate/website chrome)");
+            } else if (extracted.length > 0) {
+                if (firstGoodIndex > 0) {
+                    console.warn(`  dropping ${firstGoodIndex} leading junk entr${firstGoodIndex === 1 ? "y" : "ies"} for ${source.name} (cover page / table-of-contents noise, not real articles)`);
+                    extracted = extracted.slice(firstGoodIndex);
+                }
                 console.log("SOURCE:", source.name);
                 console.log("FINAL COUNT:", extracted.length);
                 saveData(source.name, extracted);
                 onProgress(source.name, "success", extracted.length, null);
-            } else if (!firstLooksReal) {
-                console.warn(`  x rejected ${source.name}: first article looks like boilerplate/website chrome, not real content`);
-                onProgress(source.name, "failed", 0, "First extracted article looks like website boilerplate, not document content");
             } else {
                 onProgress(source.name, "failed", 0, "No articles extracted");
             }
