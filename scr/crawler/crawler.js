@@ -6,7 +6,6 @@ const { isGoodContent } = require("../utils/filters");
 const { chromium } = require("playwright");
 const path = require("path");
 const fs = require("fs");
-
 async function runCrawler(sources = [], onProgress = () => {}) {
     const results = [];
     for (const source of sources) {
@@ -16,7 +15,6 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             onProgress(source.name, "blocked", 0, source.blockedReason);
             continue;
         }
-
         // MANUAL OVERRIDE (2026-08-18): some sources have a hand-verified
         // output that the automated parser can't reliably reproduce (see
         // sources.config.js comment on pdpl). Skip re-parsing and just
@@ -35,7 +33,6 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             }
             continue;
         }
-
         try {
             console.log(`\nProcessing: ${source.name}`);
             let extracted = [];
@@ -73,6 +70,19 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                         const articles = extractArticles(text, url);
                         console.log(`[${label}] PDF LENGTH:`, text.length);
                         console.log(`[${label}] ARTICLES:`, articles.length);
+                        // BUG (found 2026-08-19): this used to build a brand
+                        // new object with only source_doc/article_number/
+                        // global_index, silently dropping `text` (and
+                        // language/source_url/fetched_at) from every article.
+                        // Every multi_pdf source (zatca_einvoicing_regulation,
+                        // zatca_implementation_resolution, zatca_guidelines,
+                        // nca) then failed the isGoodContent sanity check
+                        // 100% of the time, since isGoodContent(undefined)
+                        // is always false — exactly the "no extracted article
+                        // looks like real content" failures seen on all 4
+                        // multi_pdf sources and none of the single-pdf ones.
+                        // Spread the original article first so its real
+                        // fields survive the tagging.
                         const tagged = articles.map(a => ({
                             ...a,
                             source_doc: label,
@@ -85,7 +95,6 @@ async function runCrawler(sources = [], onProgress = () => {}) {
                         console.warn(`  x failed [${label}]: ${e.message}`);
                     }
                 }
-
             } else if (source.method === "html") {
                 const html = await fetchPage(source.url);
                 extracted = extractArticles(html, source.url);
@@ -103,12 +112,9 @@ async function runCrawler(sources = [], onProgress = () => {}) {
             } else {
                 throw new Error(`unknown method: ${source.method}`);
             }
-
             console.log(`  articles found: ${extracted.length}`);
-
             console.log("SOURCE:", source.name);
             console.log("FINAL COUNT (before sanity check):", extracted.length);
-
             // Sanity check (Alex, adlai-scrapper review 2026-08-18; refined
             // same day after it false-positived on nca/sama/zatca_guidelines).
             //

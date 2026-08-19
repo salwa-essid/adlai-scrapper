@@ -3,7 +3,7 @@
 
 const axios = require("axios");
 const https = require("https");
-
+const { chromium } = require("playwright");
 const agent = new https.Agent({ rejectUnauthorized: false });
 async function fetchPage(url, retries = 3) {
     //retry + backoff
@@ -34,16 +34,12 @@ async function downloadPdf(url) {
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/137.0 Safari/537.36"
             }
         });
-
         return Buffer.from(res.data);
-
     } catch (err) {
         console.log("AXIOS FAILED -> PLAYWRIGHT FALLBACK");
-
         const browser = await chromium.launch({
             headless: true
         });
-
         try {
             const page = await browser.newPage();
 
@@ -51,11 +47,8 @@ async function downloadPdf(url) {
                 waitUntil: "domcontentloaded",
                 timeout: 60000
             });
-
             const buffer = await response.body();
-
             return Buffer.from(buffer);
-
         } finally {
             await browser.close();
         }
